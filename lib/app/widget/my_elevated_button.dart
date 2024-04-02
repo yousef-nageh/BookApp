@@ -15,7 +15,7 @@ class MyElevatedButton extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           text,
-          style: StyleManager.textStyle18(context)
+          style: StyleManager.textStyle18
               .copyWith(color: ColorManager.black, fontWeight: FontWeight.bold),
         ));
   }

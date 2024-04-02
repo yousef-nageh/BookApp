@@ -1,3 +1,4 @@
+import 'package:bookly_app_with_mvvm/core/utils/app_string.dart';
 import 'package:bookly_app_with_mvvm/core/utils/color_manager.dart';
 import 'package:bookly_app_with_mvvm/core/utils/style_manager.dart';
 import 'package:flutter/material.dart';
@@ -16,30 +17,30 @@ class IsLogin extends StatelessWidget {
       children: [
         Text(
          getText(),
-          style: StyleManager.textStyle16(context),
+          style: StyleManager.textStyle16,
 
         ),
         TextButton(
             onPressed: goTo,
             child:  Text(
               getButtonText(),
-              style:StyleManager.textStyle18(context).copyWith(fontWeight: FontWeight.bold,color: ColorManager.blue),
+              style:StyleManager.textStyle18.copyWith(fontWeight: FontWeight.bold,color: ColorManager.blue),
             )),
       ],
     );
   }
   String getText(){
     if(isLogin){
-      return "already have an account?";
+      return AppString.alreadyHaveAnAccount;
     }else{
-      return "don't have an account";
+      return  AppString.doNotHaveAnAccount ;
     }
   }
   String getButtonText(){
     if(isLogin){
-      return "Login";
+      return AppString.login;
     }else{
-      return "SignUp";
+      return AppString.signUp;
     }
   }
 }

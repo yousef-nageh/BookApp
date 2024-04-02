@@ -12,7 +12,7 @@ class MyText extends StatelessWidget {
       children: [
         Align(
           alignment: Alignment.topLeft,
-            child: Text(text,style: StyleManager.textStyle16(context).copyWith(fontWeight: FontWeight.bold),))
+            child: Text(text,style: StyleManager.textStyle16.copyWith(fontWeight: FontWeight.bold),))
       ],
     );
   }

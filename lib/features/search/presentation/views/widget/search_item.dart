@@ -66,7 +66,7 @@ class SearchItem extends StatelessWidget {
                       children: [
                         Text(
                          AppString.free,
-                          style: StyleManager.textStyle15(context),
+                          style: StyleManager.textStyle15,
                         ),
                         const Spacer(),
                         const RowTextWithIcon(),

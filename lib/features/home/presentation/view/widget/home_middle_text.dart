@@ -21,7 +21,7 @@ class HomeMiddleText extends StatelessWidget {
           padding: const EdgeInsets.all(kPadding),
           child: Text(
            AppString.besSeller,
-            style: StyleManager.textStyle18(context).copyWith( fontWeight: FontWeight.bold)
+            style: StyleManager.textStyle18.copyWith( fontWeight: FontWeight.bold)
           ),
         );
       }

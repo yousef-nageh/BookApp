@@ -1,5 +1,5 @@
 
-import 'package:bookly_app_with_mvvm/config/extantion.dart';
+import 'package:bookly_app_with_mvvm/config/extension.dart';
 import 'package:bookly_app_with_mvvm/config/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';

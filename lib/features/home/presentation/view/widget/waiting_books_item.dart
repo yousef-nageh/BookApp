@@ -1,4 +1,4 @@
-import 'package:bookly_app_with_mvvm/config/extantion.dart';
+import 'package:bookly_app_with_mvvm/config/extension.dart';
 import 'package:flutter/cupertino.dart';
 
 import '../../../../../app/widget/shimmer_rectangle_widget.dart';

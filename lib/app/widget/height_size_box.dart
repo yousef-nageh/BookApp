@@ -1,4 +1,4 @@
-import 'package:bookly_app_with_mvvm/config/extantion.dart';
+import 'package:bookly_app_with_mvvm/config/extension.dart';
 import 'package:flutter/cupertino.dart';
 
 class HeightSizeBox extends StatelessWidget {

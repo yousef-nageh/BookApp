@@ -17,10 +17,10 @@ class MiddleTexts extends StatelessWidget {
         children: [
            Text(
             textAlign:TextAlign.center,
-             model.title,style: StyleManager.textStyle30(context).copyWith(fontFamily: kGTFont),
+             model.title,style: StyleManager.textStyle30.copyWith(fontFamily: kGTFont),
           ),
           const SizedBox(height: 8,),
-          Text(model.publisher,style: StyleManager.textStyle18(context).copyWith(color: Colors.grey),),
+          Text(model.publisher,style: StyleManager.textStyle18.copyWith(color: Colors.grey),),
           const SizedBox(height: 8,),
         const RowTextWithIcon(mainAxisAlignment: MainAxisAlignment.center),
         ],

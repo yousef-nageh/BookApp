@@ -1,3 +1,4 @@
+import 'package:bookly_app_with_mvvm/config/extension.dart';
 import 'package:bookly_app_with_mvvm/core/utils/app_string.dart';
 import 'package:bookly_app_with_mvvm/core/utils/image_manager.dart';
 import 'package:flutter/material.dart';
@@ -21,15 +22,15 @@ class ErrorText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.sizeOf(context);
+
     return SizedBox(
       width: double.infinity,
-      height: size.height * 0.4,
+      height: 40.hR(),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Lottie.asset(getImage(),
-              height: size.height * 0.2, repeat: true, fit: BoxFit.fill),
+              height: 20.hR(), repeat: true, fit: BoxFit.fill),
           const SizedBox(
             height: kPadding,
           ),
@@ -39,7 +40,7 @@ class ErrorText extends StatelessWidget {
               textAlign: TextAlign.center,
               text.toUpperCase(),
               style:
-                  StyleManager.textStyle18(context).copyWith(fontWeight: FontWeight.bold),
+                  StyleManager.textStyle18.copyWith(fontWeight: FontWeight.bold),
             ),
           ),
         ],

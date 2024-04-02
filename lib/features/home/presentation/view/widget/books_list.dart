@@ -1,4 +1,4 @@
-import 'package:bookly_app_with_mvvm/config/extantion.dart';
+import 'package:bookly_app_with_mvvm/config/extension.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

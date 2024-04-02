@@ -1,6 +1,8 @@
 abstract class AppString{
 
   static const login="Login";
+  static const alreadyHaveAnAccount="already have an account?";
+  static const doNotHaveAnAccount="don't have an account";
   static const besSeller= "Best Seller";
   static const free="free";
   static const freePreview="Free preview";

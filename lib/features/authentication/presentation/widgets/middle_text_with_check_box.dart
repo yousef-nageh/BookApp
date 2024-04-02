@@ -1,4 +1,4 @@
-import 'package:bookly_app_with_mvvm/config/extantion.dart';
+import 'package:bookly_app_with_mvvm/config/extension.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/utils/app_string.dart';
@@ -20,7 +20,7 @@ class MiddleTextWithCheckBox extends StatelessWidget {
               alignment: Alignment.topRight,
               child: TextButton(onPressed: () {  }, child: Text(
                 AppString.forgotPassword,
-                style: StyleManager.textStyle16(context)
+                style: StyleManager.textStyle16
                     .copyWith(fontWeight: FontWeight.bold,color: ColorManager.blue),
               ),)),
         ),

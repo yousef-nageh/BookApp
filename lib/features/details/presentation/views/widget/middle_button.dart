@@ -25,7 +25,7 @@ class MiddleButton extends StatelessWidget {
             text: AppString.free,
             onPressed: () {},
             buttonColor: Colors.white,
-            style: StyleManager.textStyle15(context).copyWith(
+            style: StyleManager.textStyle15.copyWith(
                 color: Colors.black, fontWeight: FontWeight.w900, fontSize: 17),
             bottomLeft: 16,
             topLeft: 16,
@@ -42,7 +42,7 @@ class MiddleButton extends StatelessWidget {
             },
             buttonColor: const Color(0xffEF8262),
             style:
-                StyleManager.textStyle16(context).copyWith(fontWeight: FontWeight.bold),
+                StyleManager.textStyle16.copyWith(fontWeight: FontWeight.bold),
             bottomRight: 16,
             topRight: 16,
           )),

@@ -1,5 +1,5 @@
 
-import 'package:bookly_app_with_mvvm/config/extantion.dart';
+import 'package:bookly_app_with_mvvm/config/extension.dart';
 import 'package:bookly_app_with_mvvm/core/utils/app_string.dart';
 import 'package:bookly_app_with_mvvm/core/utils/style_manager.dart';
 
@@ -64,7 +64,7 @@ class LowerBooksItem extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
 
                       (model.title).toString(),
-                      style: StyleManager.textStyle20(context).copyWith(fontFamily: kGTFont,height: 1.3)
+                      style: StyleManager.textStyle20.copyWith(fontFamily: kGTFont,height: 1.3)
                     ),
 
                     Text(
@@ -78,7 +78,7 @@ class LowerBooksItem extends StatelessWidget {
                       children: [
                         Text(
                          AppString.free,
-                          style: StyleManager.textStyle15(context),
+                          style: StyleManager.textStyle15,
                         ),
                         const Spacer(),
                         const RowTextWithIcon(),

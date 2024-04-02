@@ -23,7 +23,7 @@ class RowTextWithIcon extends StatelessWidget {
         ),
         Text(
           " 4.8 ",
-          style: StyleManager.textStyle16(context),
+          style: StyleManager.textStyle16,
         ),
         const SizedBox(
           width: 2,

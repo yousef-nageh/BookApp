@@ -84,6 +84,6 @@ shape: const CircleBorder(),
         .dark()
         .textTheme,
 
-    ).copyWith(bodyLarge: StyleManager.textFormStyle(Colors.black),),
-  );
+    ).copyWith(bodyLarge: StyleManager.textStyle18.copyWith(color: Colors.black)),);
+
 }
