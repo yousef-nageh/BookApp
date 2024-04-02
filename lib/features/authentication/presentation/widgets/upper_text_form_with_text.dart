@@ -1,12 +1,12 @@
-import 'package:bookly_app_with_mvvm/features/login/presentation/manger/login_cubit.dart';
-import 'package:bookly_app_with_mvvm/features/login/presentation/manger/login_state.dart';
+import 'package:bookly_app_with_mvvm/features/authentication/presentation/manager/login_cubit/login_cubit.dart';
+import 'package:bookly_app_with_mvvm/features/authentication/presentation/manager/login_cubit/login_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../core/utils/app_string.dart';
-import '../../../../../core/widget/text_form_validator_function.dart';
+import '../../../../core/utils/app_string.dart';
+import '../../../../core/widget/text_form_validator_function.dart';
 import 'my_text.dart';
-import '../../../../../core/widget/my_text_field.dart';
+import '../../../../core/widget/my_text_field.dart';
 
 class UpperTextFormWithText extends StatelessWidget {
    const UpperTextFormWithText({super.key});

@@ -3,8 +3,9 @@ import 'package:bookly_app_with_mvvm/config/extantion.dart';
 import 'package:bookly_app_with_mvvm/config/routes/routes.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utils/image_manager.dart';
-import '../../../../../core/widget/is_login.dart';
+import '../../../../core/utils/image_manager.dart';
+import '../../../../core/widget/is_login.dart';
+
 import 'or_login_by.dart';
 
 class LowerTextWithIcon extends StatelessWidget {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utils/app_string.dart';
-import '../../../../../core/utils/color_manager.dart';
-import '../../../../../core/utils/style_manager.dart';
+import '../../../../core/utils/app_string.dart';
+import '../../../../core/utils/color_manager.dart';
+import '../../../../core/utils/style_manager.dart';
 import 'check_box_with_text.dart';
 
 class MiddleTextWithCheckBox extends StatelessWidget {

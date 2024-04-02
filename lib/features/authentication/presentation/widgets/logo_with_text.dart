@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../../core/utils/image_manager.dart';
+import '../../../../core/utils/image_manager.dart';
 
 class LogoWithText extends StatelessWidget {
   const LogoWithText({super.key});

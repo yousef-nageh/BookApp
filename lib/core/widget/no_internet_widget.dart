@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../features/login/presentation/views/widget/my_behavior.dart';
+import '../../features/authentication/presentation/widgets/my_behavior.dart';
 import '../utils/app_string.dart';
 import 'error_widget.dart';
 

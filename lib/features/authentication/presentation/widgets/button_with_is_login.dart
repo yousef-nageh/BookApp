@@ -2,10 +2,11 @@
 import 'package:bookly_app_with_mvvm/core/utils/app_string.dart';
 import 'package:bookly_app_with_mvvm/core/widget/is_login.dart';
 import 'package:bookly_app_with_mvvm/core/widget/my_elevated_button.dart';
-import 'package:bookly_app_with_mvvm/features/sign_up/presentation/manger/sign_up_cubit.dart';
-import 'package:bookly_app_with_mvvm/features/sign_up/presentation/manger/sign_up_state.dart';
+import 'package:bookly_app_with_mvvm/features/authentication/presentation/manager/signup_cubit/sign_up_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
+import '../manager/signup_cubit/sign_up_state.dart';
 
 class SignUPButtonWithIsLogin extends StatelessWidget {
   const SignUPButtonWithIsLogin({super.key});
