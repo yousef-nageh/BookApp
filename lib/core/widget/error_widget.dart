@@ -3,7 +3,7 @@ import 'package:bookly_app_with_mvvm/core/utils/image_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-import '../../constance.dart';
+import '../utils/constance.dart';
 import '../utils/style_manager.dart';
 
 class ErrorText extends StatelessWidget {

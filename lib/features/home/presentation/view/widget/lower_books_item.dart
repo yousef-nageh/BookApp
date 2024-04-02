@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 
 
 import '../../../../../config/routes/routes.dart';
-import '../../../../../constance.dart';
+import '../../../../../core/utils/constance.dart';
 import '../../../../../core/widget/image_error.dart';
 
 class LowerBooksItem extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../constance.dart';
+import '../../../../core/utils/constance.dart';
 import 'logo_with_text.dart';
 import 'button_with_is_login.dart';
 import 'upper_text_field_with_text.dart';

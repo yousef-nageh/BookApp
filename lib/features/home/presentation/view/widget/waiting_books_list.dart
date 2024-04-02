@@ -1,4 +1,4 @@
-import 'package:bookly_app_with_mvvm/constance.dart';
+import 'package:bookly_app_with_mvvm/core/utils/constance.dart';
 import 'package:flutter/material.dart';
 
 import 'waiting_books_item.dart';

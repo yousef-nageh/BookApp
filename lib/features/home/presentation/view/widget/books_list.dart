@@ -1,13 +1,14 @@
 import 'package:bookly_app_with_mvvm/config/extantion.dart';
-import 'package:bookly_app_with_mvvm/features/home/presentation/manger/upper_list_block/upper_list_cubit.dart';
-import 'package:bookly_app_with_mvvm/features/home/presentation/manger/upper_list_block/upper_list_states.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../config/routes/routes.dart';
-import '../../../../../constance.dart';
+import '../../../../../core/utils/constance.dart';
 
 import '../../../../../core/widget/error_widget.dart';
+import '../../manager/upper_list_block/upper_list_cubit.dart';
+import '../../manager/upper_list_block/upper_list_states.dart';
 import 'home_books_item.dart';
 import 'waiting_books_list.dart';
 

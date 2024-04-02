@@ -1,10 +1,12 @@
 
-import 'package:bookly_app_with_mvvm/features/home/presentation/manger/lower_list_block/lower_list_cubit.dart';
-import 'package:bookly_app_with_mvvm/features/home/presentation/manger/lower_list_block/lower_list_state.dart';
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/widget/error_widget.dart';
+import '../../manager/lower_list_block/lower_list_cubit.dart';
+import '../../manager/lower_list_block/lower_list_state.dart';
 import 'lower_books_item.dart';
 import 'waiting_lower_list.dart';
 

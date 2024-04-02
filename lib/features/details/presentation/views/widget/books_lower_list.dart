@@ -1,11 +1,12 @@
 
 import 'package:bookly_app_with_mvvm/features/details/presentation/views/widget/books_lower_item.dart';
-import 'package:bookly_app_with_mvvm/features/home/presentation/manger/lower_list_block/lower_list_cubit.dart';
-import 'package:bookly_app_with_mvvm/features/home/presentation/manger/lower_list_block/lower_list_state.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../constance.dart';
+import '../../../../../core/utils/constance.dart';
+import '../../../../home/presentation/manager/lower_list_block/lower_list_cubit.dart';
+import '../../../../home/presentation/manager/lower_list_block/lower_list_state.dart';
 
 class BooksLowerList extends StatelessWidget {
   const BooksLowerList({super.key});

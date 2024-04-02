@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../constance.dart';
+import '../../../../../core/utils/constance.dart';
 import '../../../../home/presentation/view/widget/waiting_lower_item.dart';
 
 class WaitingSearchList extends StatelessWidget {

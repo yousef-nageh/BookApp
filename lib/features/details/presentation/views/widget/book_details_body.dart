@@ -1,4 +1,4 @@
-import 'package:bookly_app_with_mvvm/constance.dart';
+import 'package:bookly_app_with_mvvm/core/utils/constance.dart';
 import 'package:bookly_app_with_mvvm/features/details/presentation/views/widget/middle_text_and_button.dart';
 import 'package:bookly_app_with_mvvm/features/home/domain/entities/book_entity.dart';
 
@@ -16,8 +16,7 @@ class BookDetailsBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double h = MediaQuery.of(context).size.height;
-    double w = MediaQuery.of(context).size.width;
+
     return CustomScrollView(
 
 

@@ -4,7 +4,7 @@ import 'package:bookly_app_with_mvvm/core/widget/error_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../constance.dart';
+import '../../../../../core/utils/constance.dart';
 import '../../../../home/presentation/view/widget/lower_books_item.dart';
 import '../../manger/search_home_cubit/search_cubit.dart';
 import '../../manger/search_home_cubit/search_state.dart';
