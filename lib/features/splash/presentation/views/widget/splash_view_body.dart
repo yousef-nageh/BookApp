@@ -5,6 +5,8 @@ import 'package:bookly_app_with_mvvm/core/utils/image_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../../../../core/utils/app_string.dart';
+
 
 
 
@@ -45,7 +47,7 @@ class _SplashViewBodyState extends State<SplashViewBody>with SingleTickerProvide
       SlideTransition(
         position: slidingAnimation,
         child: const Text(textAlign:TextAlign.center ,
-            "Read Free Book"),
+           AppString.readFreeBook),
       )
       ],
     );

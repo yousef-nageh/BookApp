@@ -1,3 +1,4 @@
+import 'package:bookly_app_with_mvvm/core/utils/app_string.dart';
 import 'package:bookly_app_with_mvvm/features/home/domain/entities/book_entity.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -64,7 +65,7 @@ class SearchItem extends StatelessWidget {
                       Row(
                       children: [
                         Text(
-                          "free ",
+                         AppString.free,
                           style: StyleManager.textStyle15(context),
                         ),
                         const Spacer(),

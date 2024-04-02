@@ -1,3 +1,4 @@
+import 'package:bookly_app_with_mvvm/core/utils/app_string.dart';
 import 'package:bookly_app_with_mvvm/core/utils/constance.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class LowerListWithText extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(left: kPadding),
           child: Text(
-            "You can also like",style:StyleManager.textStyle14(context).copyWith(fontSize: 16) ,),
+            AppString.youCanAlsoLike,style:StyleManager.textStyle14(context).copyWith(fontSize: 16) ,),
         ),
        child,
         const BooksLowerList(),

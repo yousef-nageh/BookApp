@@ -1,5 +1,11 @@
 abstract class AppString{
+
   static const login="Login";
+  static const besSeller= "Best Seller";
+  static const free="free";
+  static const freePreview="Free preview";
+  static const youCanAlsoLike=" You can also like";
+  static const readFreeBook="Read Free Book";
   static const signUp="SignUP";
   static const email="Email";
   static const hintSearch="Search";

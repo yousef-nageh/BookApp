@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../../../app/widget/my_button.dart';
+import '../../../../../core/utils/app_string.dart';
 import '../../../../../core/utils/style_manager.dart';
 
 
@@ -21,7 +22,7 @@ class MiddleButton extends StatelessWidget {
         children: [
           Expanded(
               child: MyButton(
-            text: "free",
+            text: AppString.free,
             onPressed: () {},
             buttonColor: Colors.white,
             style: StyleManager.textStyle15(context).copyWith(
@@ -31,7 +32,7 @@ class MiddleButton extends StatelessWidget {
           )),
           Expanded(
               child: MyButton(
-            text: "Free preview",
+            text: AppString.freePreview,
             onPressed: () async {
               Uri uri = Uri.parse(model.previewLink);
 

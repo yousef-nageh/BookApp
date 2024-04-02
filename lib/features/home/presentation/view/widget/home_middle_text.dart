@@ -1,3 +1,4 @@
+import 'package:bookly_app_with_mvvm/core/utils/app_string.dart';
 import 'package:bookly_app_with_mvvm/core/utils/style_manager.dart';
 
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class HomeMiddleText extends StatelessWidget {
         return   Padding(
           padding: const EdgeInsets.all(kPadding),
           child: Text(
-            "Best Seller",
+           AppString.besSeller,
             style: StyleManager.textStyle18(context).copyWith( fontWeight: FontWeight.bold)
           ),
         );

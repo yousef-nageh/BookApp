@@ -1,5 +1,6 @@
 
 import 'package:bookly_app_with_mvvm/config/extantion.dart';
+import 'package:bookly_app_with_mvvm/core/utils/app_string.dart';
 import 'package:bookly_app_with_mvvm/core/utils/style_manager.dart';
 
 import 'package:bookly_app_with_mvvm/features/home/domain/entities/book_entity.dart';
@@ -76,7 +77,7 @@ class LowerBooksItem extends StatelessWidget {
 
                       children: [
                         Text(
-                          "free ",
+                         AppString.free,
                           style: StyleManager.textStyle15(context),
                         ),
                         const Spacer(),
