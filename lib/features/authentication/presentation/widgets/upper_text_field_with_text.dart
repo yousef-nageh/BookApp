@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/utils/app_string.dart';
-import '../../../../../core/widget/text_form_validator_function.dart';
 
-import '../../../../../core/widget/my_text_field.dart';
 
+
+
+import '../../../../app/widget/my_text_field.dart';
+import '../../../../app/widget/text_form_validator_function.dart';
 import '../manager/signup_cubit/sign_up_cubit.dart';
 import '../manager/signup_cubit/sign_up_state.dart';
 import 'my_text.dart';

@@ -8,9 +8,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 
+import '../../../../../app/widget/image_error.dart';
 import '../../../../../config/routes/routes.dart';
 import '../../../../../core/utils/constance.dart';
-import '../../../../../core/widget/image_error.dart';
+
 
 class LowerBooksItem extends StatelessWidget {
   const LowerBooksItem({

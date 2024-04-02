@@ -3,8 +3,9 @@ import 'package:bookly_app_with_mvvm/features/authentication/presentation/manage
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../core/utils/app_string.dart';
-import '../../../../../core/widget/my_elevated_button.dart';
+
+import '../../../../app/widget/my_elevated_button.dart';
+import '../../../../core/utils/app_string.dart';
 import 'or_driver.dart';
 
 

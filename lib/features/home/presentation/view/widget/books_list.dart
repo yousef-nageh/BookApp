@@ -3,10 +3,10 @@ import 'package:bookly_app_with_mvvm/config/extantion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../app/widget/error_widget.dart';
 import '../../../../../config/routes/routes.dart';
 import '../../../../../core/utils/constance.dart';
 
-import '../../../../../core/widget/error_widget.dart';
 import '../../manager/upper_list_block/upper_list_cubit.dart';
 import '../../manager/upper_list_block/upper_list_states.dart';
 import 'home_books_item.dart';

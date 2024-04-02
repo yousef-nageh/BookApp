@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 
 
 
-import '../../../../../core/widget/image_error.dart';
+import '../../../../../app/widget/image_error.dart';
+
 
 
 class BooksItem extends StatelessWidget {

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../app/widget/shimmer_rectangle_widget.dart';
 import '../../../../../core/utils/constance.dart';
-import '../../../../../core/widget/shimmer_rectangle_widget.dart';
+
 
 class WaitingLowerItem extends StatelessWidget {
   const WaitingLowerItem({super.key});

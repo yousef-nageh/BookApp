@@ -2,9 +2,10 @@ import 'package:bookly_app_with_mvvm/features/home/domain/entities/book_entity.d
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../app/widget/image_error.dart';
 import '../../../../../core/utils/constance.dart';
 import '../../../../../core/utils/style_manager.dart';
-import '../../../../../core/widget/image_error.dart';
+
 
 import '../../../../home/presentation/view/widget/row_text_with_icon.dart';
 

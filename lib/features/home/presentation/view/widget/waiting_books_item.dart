@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../../../../core/widget/shimmer_rectangle_widget.dart';
+import '../../../../../app/widget/shimmer_rectangle_widget.dart';
+
+
 
 class WaitingBooksItem extends StatelessWidget {
   const WaitingBooksItem({super.key});

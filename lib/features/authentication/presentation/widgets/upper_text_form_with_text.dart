@@ -3,10 +3,12 @@ import 'package:bookly_app_with_mvvm/features/authentication/presentation/manage
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../app/widget/my_text_field.dart';
+import '../../../../app/widget/text_form_validator_function.dart';
 import '../../../../core/utils/app_string.dart';
-import '../../../../core/widget/text_form_validator_function.dart';
+
 import 'my_text.dart';
-import '../../../../core/widget/my_text_field.dart';
+
 
 class UpperTextFormWithText extends StatelessWidget {
    const UpperTextFormWithText({super.key});

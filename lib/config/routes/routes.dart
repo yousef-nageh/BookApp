@@ -1,4 +1,4 @@
-import 'package:bookly_app_with_mvvm/core/utils/service_locator.dart';
+
 import 'package:bookly_app_with_mvvm/features/details/presentation/views/book_details_view.dart';
 
 import 'package:bookly_app_with_mvvm/features/home/domain/entities/book_entity.dart';
@@ -12,6 +12,7 @@ import 'package:bookly_app_with_mvvm/features/splash/presentation/views/splash_v
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../app/functions/service_locator.dart';
 import '../../features/home/data/repo/home_repo_impl.dart';
 
 import '../../features/authentication/presentation/views/login_view.dart';

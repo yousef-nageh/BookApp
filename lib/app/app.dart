@@ -5,10 +5,11 @@ import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../config/routes/routes.dart';
-import '../core/utils/service_locator.dart';
+
 import '../features/home/data/repo/home_repo_impl.dart';
 import '../features/home/presentation/manager/lower_list_block/lower_list_cubit.dart';
 import '../features/home/presentation/manager/upper_list_block/upper_list_cubit.dart';
+import 'functions/service_locator.dart';
 
 
 class MyApp extends StatelessWidget {
