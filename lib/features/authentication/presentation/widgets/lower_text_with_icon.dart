@@ -1,4 +1,3 @@
-
 import 'package:bookly_app_with_mvvm/config/extantion.dart';
 import 'package:bookly_app_with_mvvm/config/routes/routes.dart';
 import 'package:flutter/material.dart';
@@ -11,27 +10,37 @@ import 'or_login_by.dart';
 class LowerTextWithIcon extends StatelessWidget {
   const LowerTextWithIcon({super.key});
 
+  static const List<String> images = [
+    ImageManager.facebook,
+    ImageManager.twitter,
+    ImageManager.google,
+  ];
+
   @override
   Widget build(BuildContext context) {
-    double h = MediaQuery.sizeOf(context).height;
-    return  Column(
+    return Column(
       children: [
         Padding(
-          padding:  EdgeInsets.symmetric(vertical:h * 0.02 ),
+          padding: EdgeInsets.symmetric(vertical: 2.hR()),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-
-              OrLoginBY(onTap: (){}, imageUrl: ImageManager.facebook, id: 1,),
-              OrLoginBY(onTap: (){}, imageUrl: ImageManager.twitter, id: 2,),
-              OrLoginBY(onTap: (){}, imageUrl: ImageManager.google, id: 3,),
-
-
-            ],),
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: List.generate(
+                3,
+                (index) => OrLoginBY(
+                  onTap: () {},
+                  imageUrl: images[index],
+                  id: index,
+                ),
+              )),
         ),
-        IsLogin(isLogin: false, goTo: () {
-         (context).navigateTo( pageName: AppRoutes.signUpViewRoute,);
-        },)
+        IsLogin(
+          isLogin: false,
+          goTo: () {
+            (context).navigateTo(
+              pageName: AppRoutes.signUpViewRoute,
+            );
+          },
+        )
       ],
     );
   }

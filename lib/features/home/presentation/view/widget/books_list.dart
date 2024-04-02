@@ -17,12 +17,12 @@ class BooksList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double h = MediaQuery.of(context).size.height;
+
     return BlocBuilder<UpperListCubit, UpperListStates>(
         builder: (BuildContext context, state) {
       if (state is GetUpperListSuccessState) {
         return SizedBox(
-          height: h * 0.3,
+          height: 30.hR(),
           child: ListView.separated(
             padding: const EdgeInsets.symmetric(horizontal: kPadding),
             physics: const BouncingScrollPhysics(),

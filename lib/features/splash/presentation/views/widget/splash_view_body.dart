@@ -35,12 +35,12 @@ class _SplashViewBodyState extends State<SplashViewBody>with SingleTickerProvide
 
   @override
   Widget build(BuildContext context) {
-    double w=MediaQuery.of(context).size.width;
+
     return Column (
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        SvgPicture.asset(ImageManager.logo,width: w*0.8,),
+        SvgPicture.asset(ImageManager.logo,width: 80.wR(),),
       const SizedBox(height: 8,),
       SlideTransition(
         position: slidingAnimation,

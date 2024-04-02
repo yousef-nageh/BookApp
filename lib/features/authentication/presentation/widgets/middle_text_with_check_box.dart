@@ -1,3 +1,4 @@
+import 'package:bookly_app_with_mvvm/config/extantion.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/utils/app_string.dart';
@@ -10,11 +11,11 @@ class MiddleTextWithCheckBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double h = MediaQuery.sizeOf(context).height;
+
     return  Column(
       children: [
         Padding(
-          padding: EdgeInsets.only(top: h * 0.02, bottom: h * 0.01),
+          padding: EdgeInsets.only(top: 2.hR(), bottom: 1.hR()),
           child: Align(
               alignment: Alignment.topRight,
               child: TextButton(onPressed: () {  }, child: Text(

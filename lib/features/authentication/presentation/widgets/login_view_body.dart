@@ -1,5 +1,5 @@
 
-import 'package:bookly_app_with_mvvm/features/authentication/presentation/widgets/my_behavior.dart';
+
 import 'package:flutter/material.dart';
 
 
@@ -15,28 +15,25 @@ class LoginViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    return  SafeArea(
+    return  const SafeArea(
       child:  Center(
-        child: ScrollConfiguration(
-          behavior: MyBehavior(),
-          child: const SingleChildScrollView(
-            physics:  PageScrollPhysics(),
+        child: SingleChildScrollView(
+          physics:  PageScrollPhysics(),
 
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  LogoWithText(),
-                   UpperTextFormWithText(),
-                  MiddleTextWithCheckBox(),
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                LogoWithText(),
+                 UpperTextFormWithText(),
+                MiddleTextWithCheckBox(),
 
 
-                  ButtonWithDriver(),
+                ButtonWithDriver(),
 
-                  LowerTextWithIcon()
-                ],
-              ),
+                LowerTextWithIcon()
+              ],
             ),
           ),
         ),

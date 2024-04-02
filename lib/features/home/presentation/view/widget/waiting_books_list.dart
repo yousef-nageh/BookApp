@@ -1,3 +1,4 @@
+import 'package:bookly_app_with_mvvm/config/extantion.dart';
 import 'package:bookly_app_with_mvvm/core/utils/constance.dart';
 import 'package:flutter/material.dart';
 
@@ -8,12 +9,9 @@ class WaitingBooksList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double h = MediaQuery
-        .of(context)
-        .size
-        .height;
+
     return SizedBox(
-        height: h * 0.3,
+        height:30.hR(),
         child: ListView.separated(
           padding: const EdgeInsets.symmetric(horizontal: kPadding),
 

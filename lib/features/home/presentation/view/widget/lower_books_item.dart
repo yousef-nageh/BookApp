@@ -23,11 +23,11 @@ class LowerBooksItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double h=context.getHeight();
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: kPadding),
       child: SizedBox(
-        height: h*0.15,
+        height: 15.hR(),
         child: InkWell(
           onTap: () {
             context.navigateTo(arguments:model, pageName: AppRoutes.bookDetailsViewRoute );
@@ -39,8 +39,8 @@ class LowerBooksItem extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(4),
                   child: SizedBox(
-                    height: h*0.15,
-                    width:  h*0.15*0.75,
+                    height: 15.hR(),
+                    width: 15.hR()*0.75,
                     child: CachedNetworkImage(
                       fit: BoxFit.fill,
                       errorWidget: (context, url, error) => const ImageError(
@@ -96,11 +96,5 @@ class LowerBooksItem extends StatelessWidget {
       ),
     );
   }
-  // String getAuthors(){
-  //   if(model?.authors?.isEmpty==true){
-  //     return( model?.publisher??"").toString();
-  //   }else{
-  //     return ( model?.authors?[0]).toString();
-  //   }
-  // }
+
 }

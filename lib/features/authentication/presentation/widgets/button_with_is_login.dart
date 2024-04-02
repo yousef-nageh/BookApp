@@ -1,4 +1,4 @@
-
+import 'package:bookly_app_with_mvvm/config/extantion.dart';
 import 'package:bookly_app_with_mvvm/core/utils/app_string.dart';
 
 import 'package:bookly_app_with_mvvm/features/authentication/presentation/manager/signup_cubit/sign_up_cubit.dart';
@@ -14,22 +14,25 @@ class SignUPButtonWithIsLogin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double h = MediaQuery.sizeOf(context).height;
-    return  Column(
+    return Column(
       children: [
-        BlocBuilder<SignUpCubit,SignUpStates>(
+        BlocBuilder<SignUpCubit, SignUpStates>(
           builder: (BuildContext context, state) => Padding(
-            padding:  EdgeInsets.only(top: h*0.06,bottom: h*0.02),
-            child: MyElevatedButton(text: AppString.signUp, onPressed: (){
-                 BlocProvider.of<SignUpCubit>(context).checkAndGoLogin(context);
-              //context.navigateToReplacement(pageName: AppRoutes.loginViewRoute);
-            }),
+            padding: EdgeInsets.only(top: 6.hR(), bottom: 2.hR()),
+            child: MyElevatedButton(
+                text: AppString.signUp,
+                onPressed: () {
+                  BlocProvider.of<SignUpCubit>(context)
+                      .checkAndGoLogin(context);
+                  //context.navigateToReplacement(pageName: AppRoutes.loginViewRoute);
+                }),
           ),
-
         ),
-        IsLogin(isLogin: true, goTo: (){
-          Navigator.of(context).pop();
-        })
+        IsLogin(
+            isLogin: true,
+            goTo: () {
+              Navigator.of(context).pop();
+            })
       ],
     );
   }

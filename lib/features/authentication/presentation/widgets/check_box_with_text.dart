@@ -12,26 +12,21 @@ class CheckBoxWIthText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    LoginCubit cubit=BlocProvider.of<LoginCubit>(context);
-    return   Row(children: [
-      BlocBuilder<LoginCubit,LoginStates>(
-        builder: (BuildContext context, state) => Checkbox(
-            checkColor: ColorManager.primaryColor,
-
-            side: BorderSide(color: ColorManager.white,width: 2),
-            activeColor: ColorManager.white,
-
-
-
-
-            value: cubit.checkBoxValue, onChanged: (value){
-
-cubit.setCheckBoxValue(value);
-        }),
-
-      ),
-      const MyText(text: AppString.rememberMe)
-
-    ],);
+    LoginCubit cubit = BlocProvider.of<LoginCubit>(context);
+    return Row(
+      children: [
+        BlocBuilder<LoginCubit, LoginStates>(
+          builder: (BuildContext context, state) => Checkbox(
+              checkColor: ColorManager.primaryColor,
+              side: BorderSide(color: ColorManager.white, width: 2),
+              activeColor: ColorManager.white,
+              value: cubit.checkBoxValue,
+              onChanged: (value) {
+                cubit.setCheckBoxValue(value);
+              }),
+        ),
+        const MyText(text: AppString.rememberMe)
+      ],
+    );
   }
 }

@@ -1,4 +1,5 @@
 
+import 'package:bookly_app_with_mvvm/config/extantion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -20,14 +21,14 @@ class SignUPUpperTextFormWithText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SignUpCubit cubit=BlocProvider.of<SignUpCubit>(context);
-    double h = MediaQuery.sizeOf(context).height;
+
     return  BlocBuilder<SignUpCubit,SignUpStates>(
       builder: (BuildContext context, state) =>Form(
         key: cubit.signUpFormKey,
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.only(top: h * 0.07, bottom: h * 0.02),
+              padding: EdgeInsets.only(top:7.hR(), bottom: 2.hR()),
               child: const MyText(
                 text: AppString.userName,
               ),
@@ -39,7 +40,7 @@ class SignUPUpperTextFormWithText extends StatelessWidget {
                 prefixIcon: Icons.person,
                 keyboardType: TextInputType.text),
             Padding(
-              padding: EdgeInsets.only(top: h * 0.03, bottom: h * 0.02),
+              padding: EdgeInsets.only(top: 3.hR(), bottom: 2.hR()),
               child: const MyText(
                 text: AppString.email,
               ),
@@ -51,7 +52,7 @@ class SignUPUpperTextFormWithText extends StatelessWidget {
                 prefixIcon: Icons.email_rounded,
                 keyboardType: TextInputType.emailAddress),
             Padding(
-              padding: EdgeInsets.only(top: h * 0.03, bottom: h * 0.02),
+              padding: EdgeInsets.only(top: 3.hR(), bottom: 2.hR()),
               child: const MyText(
                 text: AppString.password,
               ),
