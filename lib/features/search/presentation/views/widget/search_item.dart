@@ -1,9 +1,10 @@
+import 'package:bookly_app_with_mvvm/app/widget/my_cached_network_image.dart';
 import 'package:bookly_app_with_mvvm/core/utils/app_string.dart';
 import 'package:bookly_app_with_mvvm/features/home/domain/entities/book_entity.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+
 import 'package:flutter/material.dart';
 
-import '../../../../../app/widget/image_error.dart';
+
 import '../../../../../core/utils/constance.dart';
 import '../../../../../core/utils/style_manager.dart';
 
@@ -27,15 +28,7 @@ class SearchItem extends StatelessWidget {
               child: SizedBox(
                 height: 120,
                 width: 80,
-                child: CachedNetworkImage(
-                  fit: BoxFit.fill,
-                  errorWidget: (context, url, error) => const ImageError(
-                    borderRadius: 20,
-                  ),
-                  imageUrl: model.image
-
-                      ,
-                ),
+                child: MyCachedNetworkImage(imageUrl: model.image,)
               ),
             ),
             Expanded(

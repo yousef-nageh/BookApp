@@ -1,15 +1,16 @@
 
+import 'package:bookly_app_with_mvvm/app/widget/my_cached_network_image.dart';
 import 'package:bookly_app_with_mvvm/config/extension.dart';
 import 'package:bookly_app_with_mvvm/core/utils/app_string.dart';
 import 'package:bookly_app_with_mvvm/core/utils/style_manager.dart';
 
 import 'package:bookly_app_with_mvvm/features/home/domain/entities/book_entity.dart';
 import 'package:bookly_app_with_mvvm/features/home/presentation/view/widget/row_text_with_icon.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+
 import 'package:flutter/material.dart';
 
 
-import '../../../../../app/widget/image_error.dart';
+
 import '../../../../../config/routes/routes.dart';
 import '../../../../../core/utils/constance.dart';
 
@@ -41,13 +42,10 @@ class LowerBooksItem extends StatelessWidget {
                   borderRadius: BorderRadius.circular(4),
                   child: SizedBox(
                     height: 15.hR(),
-                    width: 15.hR()*0.75,
-                    child: CachedNetworkImage(
-                      fit: BoxFit.fill,
-                      errorWidget: (context, url, error) => const ImageError(
-                        borderRadius: 20,
-                      ),
-                      imageUrl: model.image,
+                    
+                    child: AspectRatio(
+                      aspectRatio: 0.7,
+                      child: MyCachedNetworkImage(imageUrl: model.image,),
                     ),
                   ),
                 ),
