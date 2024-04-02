@@ -10,7 +10,9 @@ import 'features/home/presentation/manager/BlocObserver.dart';
 void main() {
   Bloc.observer = MyBlocObserver();
   setUp();
-  runApp(DevicePreview(builder: (BuildContext context) => const MyApp()));
+  runApp(DevicePreview(
+      enabled: false,
+      builder: (BuildContext context) => const MyApp()));
 }
 
 
