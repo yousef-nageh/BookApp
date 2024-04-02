@@ -19,8 +19,8 @@ abstract class AppTheme {
       )
 
     ),
-    colorScheme: ColorScheme.fromSwatch()
-        .copyWith(secondary: ColorManager.white),
+    colorScheme: ColorScheme.fromSeed(seedColor: ColorManager.blue),
+
 
 
     inputDecorationTheme: InputDecorationTheme(

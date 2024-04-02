@@ -12,7 +12,6 @@ class HomeView extends StatelessWidget {
       appBar: AppBar(
       surfaceTintColor: Colors.transparent,
         title:const HomeAppBar() ,
-
       ),
       body: const HomeViewBody() ,
     );
