@@ -1,5 +1,3 @@
-import 'dart:io';
-
 
 import 'package:bookly_app_with_mvvm/core/utils/app_string.dart';
 import 'package:dio/dio.dart';
@@ -24,13 +22,11 @@ class ServerFailure extends Failure {
       case DioExceptionType.cancel:
         return ServerFailure('cancel  from ApiSever');
       case DioExceptionType.connectionError:
-        return ServerFailure('connection error  from ApiSever');
+        return ServerFailure(AppString.noInternet);
       case DioExceptionType.sendTimeout:
         return ServerFailure('send timeout from ApiSever');
       case DioExceptionType.unknown:
-        if(dioException.error is SocketException){
-          return ServerFailure(AppString.noInternet);
-        }
+
         return  ServerFailure("unexpected error please try again later ");
 
 
@@ -47,7 +43,7 @@ class ServerFailure extends Failure {
     } else if (errorNumber == 500) {
       return ServerFailure("internal server error");
     } else {
-      return ServerFailure("Opps try again ");
+      return ServerFailure("Oops try again ");
     }
   }
 }
