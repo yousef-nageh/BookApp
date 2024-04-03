@@ -9,9 +9,11 @@ import '../../../../../core/utils/app_string.dart';
 import '../../manager/lower_list_block/lower_list_cubit.dart';
 import '../../manager/upper_list_block/upper_list_cubit.dart';
 import '../../manager/upper_list_block/upper_list_states.dart';
-import 'books_list.dart';
+import 'lower_books_block_builder.dart';
+import 'upper_books_block_builder.dart';
+
 import 'home_middle_text.dart';
-import 'lower_books_list.dart';
+
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -42,10 +44,10 @@ class HomeViewBody extends StatelessWidget {
             SliverToBoxAdapter(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [ BooksList(), HomeMiddleText()],
+                children: [ UpperBooksBlockBuilder(), HomeMiddleText()],
               ),
             ),
-            LowerBooksList(),
+            LowerBooksBlockBuilder(),
             SliverToBoxAdapter(
               child: SizedBox(
                 height: 20,

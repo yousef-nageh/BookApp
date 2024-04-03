@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
             create: (BuildContext context) =>
-                UpperListCubit(UpperListUseCase(getIt.get<HomeRepoImpl>()))..getUpperListData()),
+                UpperListCubit(UpperListUseCase(getIt.get<HomeRepoImpl>()))..getUpperListData()..startController()),
         BlocProvider(
           create: (BuildContext context) =>
               LowerListCubit(LowerListUseCase(getIt.get<HomeRepoImpl>()))..getLowerListData(),

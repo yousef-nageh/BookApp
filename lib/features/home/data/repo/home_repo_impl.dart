@@ -31,9 +31,9 @@ class HomeRepoImpl implements HomeRepo {
   }
 
   @override
-  Future<Either<Failure, List<BookEntity>>> getUpperBooks() async{
+  Future<Either<Failure, List<BookEntity>>> getUpperBooks({int pageNumber=0}) async{
     try {
-      var books=await remoteDataSources.getUpperBooksData();
+      var books=await remoteDataSources.getUpperBooksData(pageNumber:pageNumber );
       return Right(books);
     } on Exception catch (e) {
       if(e is DioException ){

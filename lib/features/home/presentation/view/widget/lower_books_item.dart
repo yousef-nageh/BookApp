@@ -95,5 +95,4 @@ class LowerBooksItem extends StatelessWidget {
       ),
     );
   }
-
 }
