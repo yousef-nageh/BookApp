@@ -15,7 +15,8 @@ class BooksLowerList extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<LowerListCubit, LowerListStates>(
       builder: (BuildContext context, state) {
-        if (state is GetLowerListSuccessState) {
+        LowerListCubit cubit =LowerListCubit.instance(context);
+
           return SizedBox(
             height: 120,
             child: ListView.separated(
@@ -23,7 +24,7 @@ class BooksLowerList extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               physics: const BouncingScrollPhysics(),
               itemBuilder: (BuildContext context, int index) => BooksLowerItem(
-                imageUrl: state.lowerBooks[index].image,
+                imageUrl: cubit.lowerBooks[index].image,
 
 
               ),
@@ -31,12 +32,10 @@ class BooksLowerList extends StatelessWidget {
                   const SizedBox(
                 width: 10,
               ),
-              itemCount: state.lowerBooks.length,
+              itemCount: cubit.lowerBooks.length,
             ),
           );
-        } else {
-          return const SizedBox(height: 0,);
-        }
+
       },
     );
   }

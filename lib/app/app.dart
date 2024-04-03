@@ -12,7 +12,6 @@ import '../features/home/presentation/manager/lower_list_block/lower_list_cubit.
 import '../features/home/presentation/manager/upper_list_block/upper_list_cubit.dart';
 import 'functions/service_locator.dart';
 
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -22,16 +21,20 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-            create: (BuildContext context) =>
-                UpperListCubit(UpperListUseCase(getIt.get<HomeRepoImpl>()))..getUpperListData()..startController()),
+          create: (BuildContext context) =>
+              UpperListCubit(UpperListUseCase(getIt.get<HomeRepoImpl>()))
+                ..getUpperListData()
+                ..startController(),
+        ),
         BlocProvider(
           create: (BuildContext context) =>
-              LowerListCubit(LowerListUseCase(getIt.get<HomeRepoImpl>()))..getLowerListData(),
+              LowerListCubit(LowerListUseCase(getIt.get<HomeRepoImpl>()))
+                ..getLowerListData()
+                ..setScrollController(),
         )
       ],
       child: MaterialApp(
-
-       builder: DevicePreview.appBuilder,
+        builder: DevicePreview.appBuilder,
         initialRoute: AppRoutes.splashRoutes,
         onGenerateRoute: AppRoutes.generateRoute,
         darkTheme: AppTheme.darkTheme,

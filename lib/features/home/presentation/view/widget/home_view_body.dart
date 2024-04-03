@@ -38,17 +38,18 @@ class HomeViewBody extends StatelessWidget {
             return const NoInternetWidget();
           }
         }
-        return const CustomScrollView(
-          physics: AlwaysScrollableScrollPhysics(),
-          slivers: [
-            SliverToBoxAdapter(
+        return  CustomScrollView(
+          controller: LowerListCubit.instance(context).controller,
+          physics: const AlwaysScrollableScrollPhysics(),
+          slivers: const[
+             SliverToBoxAdapter(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [ UpperBooksBlockBuilder(), HomeMiddleText()],
               ),
             ),
-            LowerBooksBlockBuilder(),
-            SliverToBoxAdapter(
+             LowerBooksBlockBuilder(),
+             SliverToBoxAdapter(
               child: SizedBox(
                 height: 20,
               ),

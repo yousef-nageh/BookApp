@@ -12,11 +12,13 @@ class HomeRemoteDataSourcesImpl extends HomeRemoteDataSources{
   HomeRemoteDataSourcesImpl(this.dioHelper);
 
   @override
-  Future<List<BookEntity>> getLowerBooksData() async{
+  Future<List<BookEntity>> getLowerBooksData({int pageNumber=0}) async{
     var response = await dioHelper.getData(endPoint: "volumes", query: {
       'Filtering':'free-ebooks',
+      'Sorting':'newest',
       'q':'subject computer science',
-      'maxResults':"40",
+      'startIndex':'${pageNumber*10}',
+
     });
     HomeBookModel homeBookModel=HomeBookModel.fromJson(response.data);
     List<BookEntity> books=[];

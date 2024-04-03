@@ -14,7 +14,7 @@ class LowerBooksBlockBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<LowerListCubit,LowerListStates>(builder: (BuildContext context, state) {
-      if (state is GetLowerListSuccessState) {
+      if (state is GetLowerListSuccessState || state is GetLowerListWithPaginationWaitingState) {
         return const LowerBooksList();
       } else if(state is GetLowerListErrorState){
         return SliverToBoxAdapter(child: ErrorText( text: state.errorMessage,));

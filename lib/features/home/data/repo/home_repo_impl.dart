@@ -17,9 +17,9 @@ class HomeRepoImpl implements HomeRepo {
   HomeRepoImpl(this.remoteDataSources);
 
   @override
-  Future<Either<Failure, List<BookEntity>>> getLowerBooks()async {
+  Future<Either<Failure, List<BookEntity>>> getLowerBooks({int pageNumber=0})async {
    try {
-     var books=await remoteDataSources.getLowerBooksData();
+     var books=await remoteDataSources.getLowerBooksData(pageNumber:pageNumber );
      return Right(books);
    } on Exception catch (e) {
      if(e is DioException ){

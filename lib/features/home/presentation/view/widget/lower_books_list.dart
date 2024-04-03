@@ -16,23 +16,21 @@ class LowerBooksList extends StatelessWidget {
   @override
     build(BuildContext context) {
     return  BlocBuilder<LowerListCubit,LowerListStates>(builder: (BuildContext context, state) {
-      if (state is GetLowerListSuccessState) {
+      LowerListCubit cubit=LowerListCubit.instance(context) ;
+
         return SliverList.separated(
 
+
           itemBuilder: (BuildContext context, int index) {
-            if ( index< state.lowerBooks.length) {
-              return LowerBooksItem(model: state.lowerBooks[index] );
+            if ( index< cubit.lowerBooks.length) {
+              return LowerBooksItem(model: cubit.lowerBooks[index] );
             }else{
               return const WaitingLowerItem();
             }
           },
           separatorBuilder: (BuildContext context, int index) =>const SizedBox(height: 20,),
-            itemCount:state.lowerBooks.length+1 ,);
-      } else{
-        return const SliverToBoxAdapter(
-          child: SizedBox.shrink(),
-        );
-      }
+            itemCount:cubit.lowerBooks.length+1 ,);
+
     },
 
     );
