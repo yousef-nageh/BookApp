@@ -1,3 +1,5 @@
+import 'package:bookly_app_with_mvvm/config/extension.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../app/widget/shimmer_rectangle_widget.dart';
@@ -12,12 +14,13 @@ class WaitingLowerItem extends StatelessWidget {
     return   Padding(
       padding:   const EdgeInsets.symmetric(horizontal: kPadding),
       child: SizedBox(
-        height: 120,
+        height: 15.hR(),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(4),
           child:  const Row(
             children: [
-              ShimmerRectangleWidget(height:120,width: 80 ,),
+              AspectRatio(aspectRatio: 0.7,
+              child: ShimmerRectangleWidget(height:120,width: 80 ,)),
               Expanded(
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),

@@ -1,7 +1,8 @@
-import 'package:bookly_app_with_mvvm/features/home/domain/entities/book_entity.dart';
+
 import 'package:flutter/material.dart';
 
 
+import '../../../../home/domain/entities/book_entity.dart';
 import 'middle_button.dart';
 import 'middle_texts.dart';
 

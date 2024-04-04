@@ -2,7 +2,7 @@ import 'package:bookly_app_with_mvvm/features/home/presentation/view/widget/wait
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../app/widget/error_widget.dart';
+
 import '../../manager/lower_list_block/lower_list_cubit.dart';
 import '../../manager/lower_list_block/lower_list_state.dart';
 
@@ -16,9 +16,7 @@ class LowerBooksBlockBuilder extends StatelessWidget {
     return BlocBuilder<LowerListCubit,LowerListStates>(builder: (BuildContext context, state) {
       if (state is GetLowerListSuccessState || state is GetLowerListWithPaginationWaitingState) {
         return const LowerBooksList();
-      } else if(state is GetLowerListErrorState){
-        return SliverToBoxAdapter(child: ErrorText( text: state.errorMessage,));
-      }else{
+      } else{
         return const WaitingLowerList();
       }
     });

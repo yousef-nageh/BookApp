@@ -1,6 +1,8 @@
+import 'package:bookly_app_with_mvvm/config/extension.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../../../app/functions/show_snack_bar.dart';
 import '../../../../../app/widget/my_button.dart';
 import '../../../../../core/utils/app_string.dart';
 import '../../../../../core/utils/style_manager.dart';
@@ -12,12 +14,23 @@ class MiddleButton extends StatelessWidget {
   const MiddleButton({super.key, required this.model});
 
   final BookEntity model;
+void buttonFunction(BuildContext context) async{
+  Uri uri = Uri.parse(model.previewLink);
 
+  !await launchUrl(uri).catchError((error){
+    showCustomSnackBar(context,AppString.couldNotLaunch);
+ return false;
+  });
+
+
+
+
+}
   @override
   Widget build(BuildContext context) {
-    double w = MediaQuery.of(context).size.width;
+
     return SizedBox(
-      width: w * 0.85,
+      width: 85.wR(),
       child: Row(
         children: [
           Expanded(
@@ -34,11 +47,7 @@ class MiddleButton extends StatelessWidget {
               child: MyButton(
             text: AppString.freePreview,
             onPressed: () async {
-              Uri uri = Uri.parse(model.previewLink);
-
-              if (!await launchUrl(uri)) {
-                throw 'Could not launch $uri';
-              }
+              buttonFunction(context);
             },
             buttonColor: const Color(0xffEF8262),
             style:

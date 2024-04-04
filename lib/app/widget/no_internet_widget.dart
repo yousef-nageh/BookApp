@@ -1,23 +1,32 @@
+import 'package:bookly_app_with_mvvm/core/utils/image_manager.dart';
+import 'package:bookly_app_with_mvvm/core/utils/style_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
+import 'my_elevated_button.dart';
 
-import '../../core/utils/app_string.dart';
-
-
-import 'error_widget.dart';
 
 class NoInternetWidget extends StatelessWidget {
-  const NoInternetWidget({super.key});
+  const NoInternetWidget({super.key, required this.text, required this.onPressed});
+
+  final String text;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      physics: const AlwaysScrollableScrollPhysics(),
-      child: SizedBox(
-        height: MediaQuery.sizeOf(context).height*0.8,
-        child: const Column(
+      child: Center(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            ErrorText(text: AppString.noInternet),
+            Lottie.asset(ImageManager.noNetwork),
+            Text(
+              textAlign: TextAlign.center, text, style: StyleManager.textStyle20,),
+            Padding(
+              padding: const EdgeInsets.all(20),
+
+              child: MyElevatedButton(onPressed: onPressed, text: "Try Again"),
+            )
           ],
         ),
       ),

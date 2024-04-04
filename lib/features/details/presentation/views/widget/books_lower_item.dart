@@ -1,3 +1,5 @@
+import 'package:bookly_app_with_mvvm/app/widget/my_cached_network_image.dart';
+import 'package:bookly_app_with_mvvm/config/extension.dart';
 import 'package:flutter/material.dart';
 
 class BooksLowerItem extends StatelessWidget {
@@ -6,15 +8,15 @@ class BooksLowerItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return    Container(
-      height: 120,
-      width: 80,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(4),
-          image:  DecorationImage(
-              image: NetworkImage(imageUrl),
+    return   SizedBox(
+      height: 12.hR(),
+      child: AspectRatio(
 
-              fit: BoxFit.fill)),
+        aspectRatio: 0.8,
+        child: ClipRRect(
+            borderRadius: BorderRadius.circular(4),
+            child: MyCachedNetworkImage(imageUrl: imageUrl)),
+      ),
     );
   }
 }

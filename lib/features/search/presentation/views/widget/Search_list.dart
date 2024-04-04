@@ -1,10 +1,7 @@
 
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../../../../app/widget/error_widget.dart';
+import '../../../../../app/widget/no_internet_widget.dart';
 import '../../../../../core/utils/constance.dart';
 import '../../../../home/presentation/view/widget/lower_books_item.dart';
 import '../../manger/search_home_cubit/search_cubit.dart';
@@ -33,7 +30,7 @@ class SearchList extends StatelessWidget {
           );
         } else if (state is SearchErrorState) {
 
-          return ErrorText( text: state.errorMassage);
+          return  NoInternetWidget(text: state.errorMassage, onPressed: () {  },);
 
         } else if(state is SearchWaitingState){
           return const WaitingSearchList();

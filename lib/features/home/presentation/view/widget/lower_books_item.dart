@@ -40,13 +40,9 @@ class LowerBooksItem extends StatelessWidget {
                 tag: model.bookId,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(4),
-                  child: SizedBox(
-                    height: 15.hR(),
-                    
-                    child: AspectRatio(
-                      aspectRatio: 0.7,
-                      child: MyCachedNetworkImage(imageUrl: model.image,),
-                    ),
+                  child: AspectRatio(
+                    aspectRatio: 0.7,
+                    child: MyCachedNetworkImage(imageUrl: model.image,),
                   ),
                 ),
               ),
