@@ -44,12 +44,20 @@ class Items extends BookEntity {
     this.accessInfo,
     this.searchInfo,
   }) : super(
-    previewLink: volumeInfo?.previewLink??"",
-            bookId: id ?? "",
-            title: (volumeInfo?.title).toString(),
-            image: (volumeInfo?.imageLinks?.thumbnail??"https://cdn.waterstones.com/bookjackets/large/9780/7126/9780712676090.jpg").toString(),
-            publisher: (volumeInfo?.publisher??"").toString(),
-            bookAuthors: (volumeInfo?.authors?.isNotEmpty==true)? volumeInfo?.authors??["No Authors"] :["No Authors"]);
+          previewLink: volumeInfo?.previewLink ?? "",
+          bookId: id ?? "",
+          title: (volumeInfo?.title).toString(),
+          image: (volumeInfo?.imageLinks?.thumbnail ??
+                  "https://cdn.waterstones.com/bookjackets/large/9780/7126/9780712676090.jpg")
+              .toString(),
+          publisher: (volumeInfo?.publisher ?? "").toString(),
+          category: (volumeInfo?.categories?.isNotEmpty == true)
+              ? (volumeInfo?.categories?[0] ?? "computer Science")
+              : " computer Science",
+          bookAuthors: (volumeInfo?.authors?.isNotEmpty == true)
+              ? volumeInfo?.authors ?? ["No Authors"]
+              : ["No Authors"],
+        );
 
   factory Items.fromJson(dynamic json) {
     return Items(

@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import '../../../../../core/utils/app_string.dart';
 import '../../../../../core/utils/constance.dart';
 import '../../../../../core/utils/style_manager.dart';
-import 'books_lower_list.dart';
+
+import 'details_books_block_builder.dart';
 
 class LowerListWithText extends StatelessWidget {
   final Widget child;
@@ -21,7 +22,7 @@ class LowerListWithText extends StatelessWidget {
             AppString.youCanAlsoLike,style:StyleManager.textStyle14(context).copyWith(fontSize: 16) ,),
         ),
        child,
-        const BooksLowerList(),
+        const DetailsBooksBlockBuilder(),
 
       ],
     );

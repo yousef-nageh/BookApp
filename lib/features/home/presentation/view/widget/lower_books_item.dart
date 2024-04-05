@@ -1,5 +1,5 @@
 
-import 'package:bookly_app_with_mvvm/app/widget/my_cached_network_image.dart';
+
 import 'package:bookly_app_with_mvvm/config/extension.dart';
 import 'package:bookly_app_with_mvvm/core/utils/app_string.dart';
 import 'package:bookly_app_with_mvvm/core/utils/style_manager.dart';
@@ -11,6 +11,7 @@ import 'package:flutter/material.dart';
 
 
 
+import '../../../../../app/widget/book_small_image_item.dart';
 import '../../../../../config/routes/routes.dart';
 import '../../../../../core/utils/constance.dart';
 
@@ -38,13 +39,7 @@ class LowerBooksItem extends StatelessWidget {
             children: [
               Hero(
                 tag: model.bookId,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(4),
-                  child: AspectRatio(
-                    aspectRatio: 0.7,
-                    child: MyCachedNetworkImage(imageUrl: model.image,),
-                  ),
-                ),
+                child: BookSmallImageItem(imageLink: model.image,)
               ),
               const SizedBox(width: 30,),
               Expanded(

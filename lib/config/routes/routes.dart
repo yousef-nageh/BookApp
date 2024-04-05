@@ -1,4 +1,6 @@
-
+import 'package:bookly_app_with_mvvm/features/details/data/repositories/book_details_repo_impl.dart';
+import 'package:bookly_app_with_mvvm/features/details/domain/use_cases/get_related_books_use_case.dart';
+import 'package:bookly_app_with_mvvm/features/details/presentation/manager/book_details_cubit/book_details_cubit.dart';
 import 'package:bookly_app_with_mvvm/features/details/presentation/views/book_details_view.dart';
 
 import 'package:bookly_app_with_mvvm/features/home/domain/entities/book_entity.dart';
@@ -40,29 +42,32 @@ abstract class AppRoutes {
       case AppRoutes.bookDetailsViewRoute:
         var bookEntity = settings.arguments as BookEntity;
         return MaterialPageRoute(
-          builder: (BuildContext context) => BookDetailsView(
-            model: bookEntity,
+          builder: (BuildContext context) => BlocProvider(
+            create: (context) => BookDetailsCubit(
+                GetRelatedBooksUseCase(getIt.get<BookDetailsRepoImpl>()))..getRelatedBooks(bookEntity.category),
+            child: BookDetailsView(
+              model: bookEntity,
+            ),
           ),
         );
       case AppRoutes.searchViewRoute:
         return MaterialPageRoute(
             builder: (BuildContext context) => BlocProvider(
-                create: (context) => SearchCubit(
-                      SearchBooksUseCase(getIt.get<HomeRepoImpl>())
-                    ),
-                    child: const SearchView(),
-            ));
+                  create: (context) => SearchCubit(
+                      SearchBooksUseCase(getIt.get<HomeRepoImpl>())),
+                  child: const SearchView(),
+                ));
       case AppRoutes.loginViewRoute:
         return MaterialPageRoute(
             builder: (BuildContext context) => BlocProvider(
                   create: (context) => LoginCubit(),
-              child: const LoginView(),
+                  child: const LoginView(),
                 ));
       case AppRoutes.signUpViewRoute:
         return MaterialPageRoute(
-            builder: (BuildContext context) =>
-                BlocProvider(create: (context) => SignUpCubit(),
-                  child:const SignUpView(),
+            builder: (BuildContext context) => BlocProvider(
+                  create: (context) => SignUpCubit(),
+                  child: const SignUpView(),
                 ));
       default:
         return noRouteFound();

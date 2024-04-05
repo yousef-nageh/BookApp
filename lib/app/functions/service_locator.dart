@@ -1,3 +1,5 @@
+import 'package:bookly_app_with_mvvm/features/details/data/data_source/remote/book_details_remote_data_source_impl.dart';
+import 'package:bookly_app_with_mvvm/features/details/data/repositories/book_details_repo_impl.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
@@ -10,13 +12,14 @@ import '../class/dio_helper.dart';
 final getIt = GetIt.instance;
 
 void setUp() {
+  getIt.registerSingleton<DioHelper>(DioHelper(Dio()));
   getIt.registerSingleton<HomeRepoImpl>(
     HomeRepoImpl(
       HomeRemoteDataSourcesImpl(
-        DioHelper(
-          Dio(),
-        ),
+       getIt.get<DioHelper>()
       ),
     ),
   );
+  getIt.registerSingleton<BookDetailsRepoImpl>(BookDetailsRepoImpl(BookDetailsRemoteDataSourceImpl( getIt.get<DioHelper>())));
+
 }
