@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../app/widget/my_text_field.dart';
-import '../../../../app/widget/text_form_validator_function.dart';
+import '../../../../app/class/text_form_validator_function.dart';
 import '../../../../core/utils/app_string.dart';
 
 import 'my_text.dart';

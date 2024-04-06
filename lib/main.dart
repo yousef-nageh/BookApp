@@ -11,7 +11,7 @@ void main() {
   Bloc.observer = MyBlocObserver();
   setUp();
   runApp(DevicePreview(
-      enabled: true,
+      enabled: false,
       builder: (BuildContext context) => const MyApp()));
 }
 

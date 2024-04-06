@@ -15,6 +15,7 @@ List<BookEntity>bookList =[];
   Future<void> getRelatedBooks(
     String category,
   ) async {
+    emit(BookDetailsGetRelatedBooksWaitingState());
     var result = await getRelatedBooksUseCase.call(category);
     result.fold(
         (error) =>

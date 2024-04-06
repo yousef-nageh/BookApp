@@ -16,7 +16,7 @@ class HomeRemoteDataSourcesImpl extends HomeRemoteDataSources{
     var response = await dioHelper.getData(endPoint: "volumes", query: {
       'Filtering':'free-ebooks',
       'Sorting':'newest',
-      'q':'subject computer science',
+      'q':'subject programing language',
       'startIndex':'${pageNumber*10}',
 
     });
@@ -50,20 +50,6 @@ class HomeRemoteDataSourcesImpl extends HomeRemoteDataSources{
 
 
 
-  @override
-  Future<List<BookEntity>> postSearchBooksData(String bookName)async {
-    var response = await dioHelper.getData(endPoint: "volumes",
-        query: {
-          'Filtering':'free-ebooks',
-          'Sorting':'newest',
-          'q':'subject $bookName',
-           'maxResults':"40",
-        }
-    );
-    HomeBookModel homeBookModel =HomeBookModel.fromJson(response.data);
-    List<BookEntity> books=[];
-    books=homeBookModel.items!;
-    return books;
-  }
+
 
 }

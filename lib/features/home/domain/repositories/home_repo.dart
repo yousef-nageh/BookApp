@@ -5,5 +5,5 @@ import 'package:dartz/dartz.dart';
 abstract class HomeRepo{
   Future<Either<Failure,List<BookEntity>>> getUpperBooks({int pageNumber=0});
   Future<Either<Failure,List<BookEntity>>> getLowerBooks({int pageNumber=0});
-  Future<Either<Failure,List<BookEntity>>> postSearchBooks(String bookName);
+
 }

@@ -35,7 +35,7 @@ final  controller=ScrollController();
       if(controller.position.maxScrollExtent==controller.offset){
         getUpperListData(pageNumber:nextPage );
         nextPage++;
-        print(nextPage);
+
       }
     });
   }

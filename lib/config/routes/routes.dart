@@ -4,20 +4,22 @@ import 'package:bookly_app_with_mvvm/features/details/presentation/manager/book_
 import 'package:bookly_app_with_mvvm/features/details/presentation/views/book_details_view.dart';
 
 import 'package:bookly_app_with_mvvm/features/home/domain/entities/book_entity.dart';
-import 'package:bookly_app_with_mvvm/features/home/domain/use_cases/search_book_use_case.dart';
+import 'package:bookly_app_with_mvvm/features/search/domain/use_cases/search_book_use_case.dart';
 
 import 'package:bookly_app_with_mvvm/features/home/presentation/view/home_view.dart';
 import 'package:bookly_app_with_mvvm/features/authentication/presentation/manager/login_cubit/login_cubit.dart';
-import 'package:bookly_app_with_mvvm/features/search/presentation/manger/search_home_cubit/search_cubit.dart';
+
 import 'package:bookly_app_with_mvvm/features/authentication/presentation/manager/signup_cubit/sign_up_cubit.dart';
 import 'package:bookly_app_with_mvvm/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../app/functions/service_locator.dart';
-import '../../features/home/data/repo/home_repo_impl.dart';
+
 
 import '../../features/authentication/presentation/views/login_view.dart';
+import '../../features/search/data/repo/search_repo_impl.dart';
+import '../../features/search/presentation/manager/search_home_cubit/search_cubit.dart';
 import '../../features/search/presentation/views/search_view.dart';
 import '../../features/authentication/presentation/views/sign_up_view.dart';
 
@@ -37,11 +39,13 @@ abstract class AppRoutes {
         );
       case AppRoutes.homeViewRoute:
         return MaterialPageRoute(
+
           builder: (BuildContext context) => const HomeView(),
         );
       case AppRoutes.bookDetailsViewRoute:
         var bookEntity = settings.arguments as BookEntity;
         return MaterialPageRoute(
+
           builder: (BuildContext context) => BlocProvider(
             create: (context) => BookDetailsCubit(
                 GetRelatedBooksUseCase(getIt.get<BookDetailsRepoImpl>()))..getRelatedBooks(bookEntity.category),
@@ -54,7 +58,7 @@ abstract class AppRoutes {
         return MaterialPageRoute(
             builder: (BuildContext context) => BlocProvider(
                   create: (context) => SearchCubit(
-                      SearchBooksUseCase(getIt.get<HomeRepoImpl>())),
+                      SearchBooksUseCase(getIt.get<SearchRepoImpl>())),
                   child: const SearchView(),
                 ));
       case AppRoutes.loginViewRoute:

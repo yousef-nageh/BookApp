@@ -21,7 +21,9 @@ class MiddleTexts extends StatelessWidget {
              model.title,style: StyleManager.textStyle30.copyWith(fontFamily: kGTFont),
           ),
           const SizedBox(height: 8,),
-          Text(model.publisher,style: StyleManager.textStyle18.copyWith(color: Colors.grey),),
+          Text(
+            textAlign:TextAlign.center,
+            model.publisher,style: StyleManager.textStyle18.copyWith(color: Colors.grey),),
           const SizedBox(height: 8,),
         const RowTextWithIcon(mainAxisAlignment: MainAxisAlignment.center),
         ],

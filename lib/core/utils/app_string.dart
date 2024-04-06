@@ -21,5 +21,7 @@ abstract class AppString{
 static const rememberMe="remember me";
 static const userName="Name";
 static const noInternet="NO INTERNET CONNECTION";
+static const noItemFound="No Item Found";
+  static const  waitingLoading="please waiting loading the Books";
 
 }

@@ -44,20 +44,8 @@ class HomeRepoImpl implements HomeRepo {
 
   }
 
-  @override
-  Future<Either<Failure, List<BookEntity>>> postSearchBooks(String bookName) async{
-    try {
-      var books= await remoteDataSources.postSearchBooksData(bookName);
-      return Right(books);
-    } on Exception catch (e) {
-      if(e is DioException){
-        return Left(ServerFailure.fromDioError(e));
-      }
-      return Left(ServerFailure(e.toString()));
 
-    }
 
-  }
 
 
 

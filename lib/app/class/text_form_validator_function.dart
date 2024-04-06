@@ -1,8 +1,7 @@
 abstract class Validator{
 
   static String? emailValidator(String? value) {
-    bool emailValid = RegExp(
-        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+    bool emailValid =RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$')
         .hasMatch(value ?? "");
     if (value?.isEmpty == true) {
       return "Email must have value";
@@ -43,6 +42,16 @@ abstract class Validator{
     } else {
       return null;
     }
+  }
+  static String? searchValidator(String? value) {
+    bool isValid=RegExp(r'^[a-zA-Z\u0621-\u064A\s]+$').hasMatch(value??"");
+    if (value?.isEmpty == true) {
+      return "Name must have value";
+    }
+    if(!isValid){
+     return "Input contains only letters and spaces";
+    }
+    return null;
   }
 
 }

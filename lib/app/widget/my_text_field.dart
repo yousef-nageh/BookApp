@@ -10,6 +10,7 @@ class MyTextForm extends StatelessWidget {
   final void Function(String)? onChanged;
   final Function()? suffixIconFunction;
   final bool obscureText;
+  final VoidCallback? onTap;
 
   const MyTextForm(
       {super.key,
@@ -21,13 +22,14 @@ class MyTextForm extends StatelessWidget {
       this.suffixIcon,
       this.onFieldSubmitted,
       this.obscureText = false,
-      this.suffixIconFunction});
+      this.suffixIconFunction, this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       autovalidateMode: AutovalidateMode.onUserInteraction,
       obscureText: obscureText,
+      onTap: onTap,
       onFieldSubmitted: onFieldSubmitted,
       onTapOutside: (event) {
         FocusManager.instance.primaryFocus?.unfocus();

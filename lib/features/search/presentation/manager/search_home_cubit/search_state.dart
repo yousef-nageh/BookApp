@@ -6,6 +6,7 @@ abstract class SearchState {}
 
 class SearchInitial extends SearchState {}
 class SearchWaitingState extends SearchState {}
+class SearchPaginationWaitingState extends SearchState {}
 class SearchSuccessState extends SearchState {
 
   final List<BookEntity> model;

@@ -45,7 +45,7 @@ class Items extends BookEntity {
     this.searchInfo,
   }) : super(
           previewLink: volumeInfo?.previewLink ?? "",
-          bookId: id ?? "",
+          bookId: id.toString()+etag.toString(),
           title: (volumeInfo?.title).toString(),
           image: (volumeInfo?.imageLinks?.thumbnail ??
                   "https://cdn.waterstones.com/bookjackets/large/9780/7126/9780712676090.jpg")

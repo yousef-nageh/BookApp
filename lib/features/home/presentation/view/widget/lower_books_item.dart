@@ -26,7 +26,6 @@ class LowerBooksItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: kPadding),
       child: SizedBox(
@@ -38,6 +37,7 @@ class LowerBooksItem extends StatelessWidget {
           child: Row(
             children: [
               Hero(
+
                 tag: model.bookId,
                 child: BookSmallImageItem(imageLink: model.image,)
               ),
