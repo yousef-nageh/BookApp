@@ -1,4 +1,10 @@
+import 'package:bookly_app_with_mvvm/app/functions/show_snack_bar.dart';
+import 'package:bookly_app_with_mvvm/config/extension.dart';
+import 'package:bookly_app_with_mvvm/config/routes/routes.dart';
+import 'package:bookly_app_with_mvvm/features/authentication/presentation/manager/signup_cubit/sign_up_cubit.dart';
+import 'package:bookly_app_with_mvvm/features/authentication/presentation/manager/signup_cubit/sign_up_state.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/utils/constance.dart';
 import 'logo_with_text.dart';
@@ -11,18 +17,27 @@ class SignUpViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    return const SafeArea(
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: kPadding),
-        child: Center(
-          child: SingleChildScrollView(
-            child:  Column(
-              children: [
-                LogoWithText(),
-                SignUPUpperTextFormWithText(),
-                SignUPButtonWithIsLogin()
-              ],
+    return BlocListener<SignUpCubit, SignUpStates>(
+      listener: (context, state) {
+       if(state is SignUpSuccessState){
+         print("done");
+         context.navigateToReplacement(pageName: AppRoutes.homeViewRoute);
+       }else if(state is SignUpErrorState){
+         showCustomSnackBar(context, state.mess);
+       }
+      },
+      child: const SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: kPadding),
+          child: Center(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  LogoWithText(),
+                  SignUPUpperTextFormWithText(),
+                  SignUPButtonWithIsLogin()
+                ],
+              ),
             ),
           ),
         ),

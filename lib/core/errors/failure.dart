@@ -1,6 +1,9 @@
 
+
+
 import 'package:bookly_app_with_mvvm/core/utils/app_string.dart';
 import 'package:dio/dio.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 abstract class Failure {
   final String errorMessage;
@@ -47,5 +50,19 @@ class ServerFailure extends Failure {
     }
   }
 }
+class FirBaseFailure extends Failure {
+  FirBaseFailure(super.errorMessage);
 
+  factory FirBaseFailure.fromAuth(FirebaseAuthException exception){
+    if (exception.code == 'weak-password') {
+      return FirBaseFailure("The password provided is too weak.") ;
+    } else if (exception.code == 'email-already-in-use') {
+      return FirBaseFailure("The account already exists for that email.") ;
+    }else if(exception.code =="network-request-failed"){
+     return  FirBaseFailure(AppString.noInternet);
+    }else{
+      return FirBaseFailure("oops something went wrong. please try again later" );
+    }
+  }
+}
 

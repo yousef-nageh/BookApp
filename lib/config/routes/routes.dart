@@ -1,3 +1,4 @@
+import 'package:bookly_app_with_mvvm/features/authentication/data/repositories/authentication_repo_impl.dart';
 import 'package:bookly_app_with_mvvm/features/details/data/repositories/book_details_repo_impl.dart';
 import 'package:bookly_app_with_mvvm/features/details/domain/use_cases/get_related_books_use_case.dart';
 import 'package:bookly_app_with_mvvm/features/details/presentation/manager/book_details_cubit/book_details_cubit.dart';
@@ -70,7 +71,7 @@ abstract class AppRoutes {
       case AppRoutes.signUpViewRoute:
         return MaterialPageRoute(
             builder: (BuildContext context) => BlocProvider(
-                  create: (context) => SignUpCubit(),
+                  create: (context) => SignUpCubit(getIt.get<AuthenticationRepoImpl>()),
                   child: const SignUpView(),
                 ));
       default:

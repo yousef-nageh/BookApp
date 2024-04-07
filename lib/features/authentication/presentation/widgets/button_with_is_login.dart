@@ -1,4 +1,5 @@
 import 'package:bookly_app_with_mvvm/config/extension.dart';
+import 'package:bookly_app_with_mvvm/config/routes/routes.dart';
 import 'package:bookly_app_with_mvvm/core/utils/app_string.dart';
 
 import 'package:bookly_app_with_mvvm/features/authentication/presentation/manager/signup_cubit/sign_up_cubit.dart';
@@ -17,21 +18,23 @@ class SignUPButtonWithIsLogin extends StatelessWidget {
     return Column(
       children: [
         BlocBuilder<SignUpCubit, SignUpStates>(
-          builder: (BuildContext context, state) => Padding(
+          builder: (BuildContext context, state) {
+            return Padding(
             padding: EdgeInsets.only(top: 6.hR(), bottom: 2.hR()),
-            child: MyElevatedButton(
+            child: state is SignUpWaitingState? const CircularProgressIndicator(): MyElevatedButton(
                 text: AppString.signUp,
                 onPressed: () {
                   BlocProvider.of<SignUpCubit>(context)
-                      .checkAndGoLogin(context);
-                  //context.navigateToReplacement(pageName: AppRoutes.loginViewRoute);
+                      .checkAndGoLogin();
+
                 }),
-          ),
+          );
+          },
         ),
         IsLogin(
             isLogin: true,
             goTo: () {
-              Navigator.of(context).pop();
+              context.navigateToReplacement(pageName: AppRoutes.loginViewRoute);
             })
       ],
     );

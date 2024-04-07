@@ -11,7 +11,7 @@ class MyTextForm extends StatelessWidget {
   final Function()? suffixIconFunction;
   final bool obscureText;
   final VoidCallback? onTap;
-
+final TextEditingController? controller;
   const MyTextForm(
       {super.key,
       required this.hintText,
@@ -22,11 +22,12 @@ class MyTextForm extends StatelessWidget {
       this.suffixIcon,
       this.onFieldSubmitted,
       this.obscureText = false,
-      this.suffixIconFunction, this.onTap});
+      this.suffixIconFunction, this.onTap, this.controller});
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller:controller ,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       obscureText: obscureText,
       onTap: onTap,

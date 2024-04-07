@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/utils/constance.dart';
 import '../../../../home/presentation/view/widget/lower_books_item.dart';
-import '../../../../home/presentation/view/widget/waiting_lower_item.dart';
 import '../../manager/search_home_cubit/search_cubit.dart';
 import '../../manager/search_home_cubit/search_state.dart';
 

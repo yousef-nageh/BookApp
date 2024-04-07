@@ -36,7 +36,7 @@ class LowerTextWithIcon extends StatelessWidget {
         IsLogin(
           isLogin: false,
           goTo: () {
-            (context).navigateTo(
+            (context).navigateToReplacement(
               pageName: AppRoutes.signUpViewRoute,
             );
           },

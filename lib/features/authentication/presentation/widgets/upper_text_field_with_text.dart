@@ -20,10 +20,12 @@ class SignUPUpperTextFormWithText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SignUpCubit cubit=BlocProvider.of<SignUpCubit>(context);
+
 
     return  BlocBuilder<SignUpCubit,SignUpStates>(
-      builder: (BuildContext context, state) =>Form(
+      builder: (BuildContext context, state) {
+        SignUpCubit cubit=BlocProvider.of<SignUpCubit>(context);
+        return Form(
         key: cubit.signUpFormKey,
         child: Column(
           children: [
@@ -34,7 +36,6 @@ class SignUPUpperTextFormWithText extends StatelessWidget {
               ),
             ),
             const MyTextForm(
-
                 validator:Validator.userNameValidator,
                 hintText: AppString.userHint,
                 prefixIcon: Icons.person,
@@ -45,7 +46,8 @@ class SignUPUpperTextFormWithText extends StatelessWidget {
                 text: AppString.email,
               ),
             ),
-            const MyTextForm(
+             MyTextForm(
+               controller: cubit.emailData,
 
                 validator: Validator.emailValidator,
                 hintText: AppString.emailHint,
@@ -58,6 +60,7 @@ class SignUPUpperTextFormWithText extends StatelessWidget {
               ),
             ),
             MyTextForm(
+              controller: cubit.passwordData,
               obscureText: cubit.signUpObscureText,
               validator:Validator.passwordValidator,
               hintText: AppString.passwordHint,
@@ -68,7 +71,8 @@ class SignUPUpperTextFormWithText extends StatelessWidget {
             ),
           ],
         ),
-      ),
+      );
+      },
 
     );
   }
