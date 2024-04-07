@@ -18,12 +18,17 @@ class ButtonWithDriver extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(top: 3.hR(), bottom: 2.hR()),
           child: BlocBuilder<LoginCubit, LoginStates>(
-            builder: (BuildContext context, state) => MyElevatedButton(
+            builder: (BuildContext context, state) {
+              if(state is LongInWaitingState){
+                return const Center(child:  CircularProgressIndicator());
+              }
+              return MyElevatedButton(
               text: AppString.login,
               onPressed: () {
-                BlocProvider.of<LoginCubit>(context).checkAndGoHome(context);
+                BlocProvider.of<LoginCubit>(context).checkAndGoHome();
               },
-            ),
+            );
+            },
           ),
         ),
         const OrDriver(),

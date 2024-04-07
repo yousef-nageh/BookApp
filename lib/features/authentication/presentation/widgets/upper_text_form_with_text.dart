@@ -1,3 +1,4 @@
+import 'package:bookly_app_with_mvvm/config/extension.dart';
 import 'package:bookly_app_with_mvvm/features/authentication/presentation/manager/login_cubit/login_cubit.dart';
 import 'package:bookly_app_with_mvvm/features/authentication/presentation/manager/login_cubit/login_state.dart';
 import 'package:flutter/material.dart';
@@ -15,36 +16,37 @@ class UpperTextFormWithText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    LoginCubit cubit=BlocProvider.of<LoginCubit>(context);
-    double h = MediaQuery.sizeOf(context).height;
+
+
     return  BlocBuilder<LoginCubit,LoginStates>(
-      builder: (BuildContext context, state) =>Form(
+      builder: (BuildContext context, state) {
+        LoginCubit cubit=BlocProvider.of<LoginCubit>(context);
+        return Form(
         key: cubit.loginFormKey,
 
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.only(top: h * 0.07, bottom: h * 0.02),
+              padding: EdgeInsets.only(top: 3.hR(), bottom: 2.hR()),
               child: const MyText(
                 text: AppString.email,
               ),
             ),
              MyTextForm(
-              onChanged: (value){
-
-              },
-
+               controller: cubit.emailData,
                 validator:Validator. emailValidator,
                 hintText: AppString.email,
                 prefixIcon: Icons.email_rounded,
                 keyboardType: TextInputType.emailAddress),
             Padding(
-              padding: EdgeInsets.only(top: h * 0.03, bottom: h * 0.02),
+              padding: EdgeInsets.only(top:3.hR(), bottom: 2.hR()),
               child: const MyText(
                 text: AppString.password,
               ),
             ),
              MyTextForm(
+               controller: cubit.passwordData,
+
                obscureText: cubit.loginObscureText,
               validator:Validator.passwordValidator,
               hintText: AppString.passwordHint,
@@ -55,7 +57,8 @@ class UpperTextFormWithText extends StatelessWidget {
             ),
           ],
         ),
-      ),
+      );
+      },
 
     );
   }

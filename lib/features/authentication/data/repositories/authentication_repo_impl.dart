@@ -15,7 +15,7 @@ class AuthenticationRepoImpl extends AuthenticationRepo{
   @override
   Future<Either<Failure, UserCredential>> userSignup({required String email, required String password})  async{
   try {
-    var response= await fireBaseService.signInWithEmailPassword(email, password);
+    var response= await fireBaseService.signUpWithEmailPassword(email, password);
     return Right(response);
   } on Exception catch (e) {
     if(e is FirebaseAuthException){
@@ -24,5 +24,35 @@ class AuthenticationRepoImpl extends AuthenticationRepo{
   return Left(FirBaseFailure(e.toString()));
   }
   }
+
+  @override
+  Future<Either<Failure, Unit>> sendEmailVerification() async {
+    try {
+      await fireBaseService.sendEmailVerification();
+      return const Right(unit);
+    } on Exception catch (e) {
+      if(e is FirebaseAuthException){
+        return left(FirBaseFailure.fromAuth(e));
+      }
+      return Left(FirBaseFailure(e.toString()));
+    }
+
+
+  }
+
+  @override
+  Future<Either<Failure, UserCredential>> userLogin({required String email, required String password}) async {
+    try {
+      var response= await fireBaseService.signInWithEmailAndPassword(email, password);
+      return Right(response);
+    } on Exception catch (e) {
+      if(e is FirebaseAuthException){
+        return left(FirBaseFailure.fromAuth(e));
+      }
+      return Left(FirBaseFailure(e.toString()));
+    }
+
+  }
+
 
 }

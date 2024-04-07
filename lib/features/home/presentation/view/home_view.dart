@@ -18,6 +18,7 @@ class HomeView extends StatelessWidget {
       appBar: AppBar(
         surfaceTintColor: Colors.transparent,
         title: const HomeAppBar(),
+        titleSpacing: 0,
       ),
       body: BlocBuilder<UpperListCubit, UpperListStates>(
         builder: (context, state) {

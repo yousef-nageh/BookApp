@@ -22,15 +22,17 @@ dependencies:
   dartz: ^0.10.1
   dio: ^5.4.2+1
   flutter_bloc: ^8.1.5
-  get_it: ^7.6.7
+  get_it: ^7.6.8
   cached_network_image: ^3.3.1
   url_launcher: ^6.2.5
   shimmer: ^3.0.0
   lottie: ^3.1.0
+  shared_preferences: ^2.2.2
   device_preview: ^1.1.0
   json_annotation: ^4.8.1
   firebase_core: ^2.28.0
   firebase_auth: ^4.19.0
+
 
 
 

@@ -1,13 +1,16 @@
-
-
+import 'package:bookly_app_with_mvvm/features/authentication/data/repositories/authentication_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../config/routes/routes.dart';
 import 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginStates> {
-  LoginCubit() : super(LoginInitial());
+  LoginCubit(this.authenticationRepo) : super(LoginInitial());
+  AuthenticationRepo authenticationRepo;
+
+  static LoginCubit instance(BuildContext context) => BlocProvider.of(context);
+  var emailData = TextEditingController();
+  var passwordData = TextEditingController();
   IconData loginIcon = Icons.visibility_off;
   var loginFormKey = GlobalKey<FormState>();
 
@@ -28,14 +31,20 @@ class LoginCubit extends Cubit<LoginStates> {
   }
 
 
-
-  void checkAndGoHome(context) {
+  void checkAndGoHome() {
     if (loginFormKey.currentState?.validate() == true) {
-      //context.navigateToReplacement(pageName: AppRoutes.homeViewRoute);
-      Navigator.pushReplacementNamed(context, AppRoutes.homeViewRoute);
+      userLogin(email: emailData.text,password:passwordData.text );
     }
   }
 
+  Future<void> userLogin(
+      {required String email, required String password}) async {
+    emit(LongInWaitingState());
+    var result = await authenticationRepo.userLogin(
+        email: email, password: password);
+    result.fold((error) => emit(LongInErrorState(error.errorMessage)), (data) =>
+        emit(LongInSuccessState(data)));
+  }
 
 
 }

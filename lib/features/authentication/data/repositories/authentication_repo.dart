@@ -5,5 +5,7 @@ import '../../../../core/errors/failure.dart';
 
 abstract class AuthenticationRepo{
 Future<  Either<Failure,UserCredential>> userSignup({required String email,required String password });
+Future<  Either<Failure,UserCredential>> userLogin({required String email,required String password });
+Future <Either<Failure,Unit>> sendEmailVerification();
 
 }

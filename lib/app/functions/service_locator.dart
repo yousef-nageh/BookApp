@@ -26,5 +26,6 @@ void setUp() {
   );
   getIt.registerSingleton<BookDetailsRepoImpl>(BookDetailsRepoImpl(BookDetailsRemoteDataSourceImpl( getIt.get<DioHelper>())));
 getIt.registerSingleton<SearchRepoImpl>(SearchRepoImpl(SearchRemoteDataSourceImpl(getIt.get<DioHelper>())));
-getIt.registerSingleton<AuthenticationRepoImpl>(AuthenticationRepoImpl(FireBaseService()));
+getIt.registerSingleton<FireBaseService>(FireBaseService());
+getIt.registerSingleton<AuthenticationRepoImpl>(AuthenticationRepoImpl(getIt.get<FireBaseService>()));
 }

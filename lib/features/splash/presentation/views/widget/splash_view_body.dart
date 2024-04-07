@@ -1,4 +1,5 @@
 
+import 'package:bookly_app_with_mvvm/app/class/cache_helper.dart';
 import 'package:bookly_app_with_mvvm/config/extension.dart';
 import 'package:bookly_app_with_mvvm/config/routes/routes.dart';
 import 'package:bookly_app_with_mvvm/core/utils/image_manager.dart';
@@ -6,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../../core/utils/app_string.dart';
+import '../../../../../core/utils/constance.dart';
 
 
 
@@ -59,9 +61,15 @@ class _SplashViewBodyState extends State<SplashViewBody>with SingleTickerProvide
     animationController.forward();
   }
   void navigateToHome(){
+    CacheHelper.token=CacheHelper.getData(key: token);
     Future.delayed(const Duration(seconds: 2),(){
       if(mounted) {
-       context.navigateToReplacement(pageName: AppRoutes.loginViewRoute);
+        if(CacheHelper.token !=null){
+          context.navigateToReplacement(pageName: AppRoutes.homeViewRoute);
+        }else{
+          context.navigateToReplacement(pageName: AppRoutes.loginViewRoute);
+        }
+
       }
     });
   }

@@ -60,9 +60,15 @@ class FirBaseFailure extends Failure {
       return FirBaseFailure("The account already exists for that email.") ;
     }else if(exception.code =="network-request-failed"){
      return  FirBaseFailure(AppString.noInternet);
-    }else{
-      return FirBaseFailure("oops something went wrong. please try again later" );
+    }else if(exception.code == 'user-not-found'){
+     return  FirBaseFailure("User not found. Please sign up.");
+    }else if(exception.code == 'invalid-credential'){
+      return  FirBaseFailure("Wrong password provided for that user.");
+    } else{
+
+      return FirBaseFailure(exception.message??"" );
     }
+
   }
 }
 

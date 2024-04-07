@@ -9,6 +9,7 @@ abstract class ImageManager{
   static const String twitter='assets/images/twitter.svg';
 
   static const String noNetwork="assets/json/no_internet_image.json";
+  static const String loginSuccessImage="assets/json/login_success.json";
 
 
 

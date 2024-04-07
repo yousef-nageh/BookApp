@@ -1,3 +1,4 @@
+import 'package:bookly_app_with_mvvm/app/class/cache_helper.dart';
 import 'package:bookly_app_with_mvvm/app/functions/show_snack_bar.dart';
 import 'package:bookly_app_with_mvvm/config/extension.dart';
 import 'package:bookly_app_with_mvvm/config/routes/routes.dart';
@@ -11,7 +12,6 @@ import 'logo_with_text.dart';
 import 'button_with_is_login.dart';
 import 'upper_text_field_with_text.dart';
 
-
 class SignUpViewBody extends StatelessWidget {
   const SignUpViewBody({super.key});
 
@@ -19,12 +19,16 @@ class SignUpViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<SignUpCubit, SignUpStates>(
       listener: (context, state) {
-       if(state is SignUpSuccessState){
-         print("done");
-         context.navigateToReplacement(pageName: AppRoutes.homeViewRoute);
-       }else if(state is SignUpErrorState){
-         showCustomSnackBar(context, state.mess);
-       }
+        if (state is SignUpSuccessState) {
+          CacheHelper.setData(key: token, value: state.userData.user?.uid).then((value) {
+            if(value==true){
+              context.navigateToReplacement(pageName: AppRoutes.loginSuccessRoute);
+            }
+          });
+
+        } else if (state is SignUpErrorState) {
+          showCustomSnackBar(context, state.mess);
+        }
       },
       child: const SafeArea(
         child: Padding(
