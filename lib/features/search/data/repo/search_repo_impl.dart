@@ -3,6 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
 import '../../../../core/errors/failure.dart';
+import '../../../../core/errors/server_failure.dart';
 import '../../../home/domain/entities/book_entity.dart';
 import '../../domain/repositories/search_repo.dart';
 

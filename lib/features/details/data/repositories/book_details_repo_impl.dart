@@ -5,6 +5,7 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
 import '../../../../core/errors/failure.dart';
+import '../../../../core/errors/server_failure.dart';
 
 class BookDetailsRepoImpl extends BookDetailsRepo {
   final BookDetailsRemoteDataSource remoteDataSource;

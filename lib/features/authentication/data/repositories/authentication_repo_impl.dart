@@ -5,6 +5,7 @@ import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import '../../../../app/class/firebase_service.dart';
+import '../../../../core/errors/firebase_failure.dart';
 import 'authentication_repo.dart';
 
 class AuthenticationRepoImpl extends AuthenticationRepo{
