@@ -1,6 +1,7 @@
 
 
-import 'package:bookly_app_with_mvvm/features/home/data/models/home_model/HomeBookModel.dart';
+import 'package:bookly_app_with_mvvm/app/class/app_endpoint.dart';
+import 'package:bookly_app_with_mvvm/features/home/data/models/home_model/home_book_model.dart';
 import 'package:bookly_app_with_mvvm/features/home/domain/entities/book_entity.dart';
 
 import '../../../../../app/class/dio_helper.dart';
@@ -13,7 +14,7 @@ class HomeRemoteDataSourcesImpl extends HomeRemoteDataSources{
 
   @override
   Future<List<BookEntity>> getLowerBooksData({int pageNumber=0}) async{
-    var response = await dioHelper.getData(endPoint: "volumes", query: {
+    var response = await dioHelper.getData(endPoint: AppEndpoint.volumes, query: {
       'Filtering':'free-ebooks',
       'Sorting':'newest',
       'q':'subject programing language',
@@ -32,7 +33,7 @@ class HomeRemoteDataSourcesImpl extends HomeRemoteDataSources{
   Future<List<BookEntity>> getUpperBooksData({int pageNumber=0}) async{
     var response = await dioHelper.getData(
         endPoint:
-        "volumes",
+        AppEndpoint.volumes,
         query: {
           'Filtering':'free-ebooks',
           'Sorting':'newest',
