@@ -6,7 +6,6 @@ import 'package:bookly_app_with_mvvm/features/authentication/presentation/manage
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
 import '../../../../app/class/cache_helper.dart';
 import '../../../../core/utils/constance.dart';
 import 'button_with_driver.dart';
@@ -22,23 +21,23 @@ class LoginViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<LoginCubit, LoginStates>(
       listener: (context, state) {
-       if(state is LongInSuccessState ){
-
-         CacheHelper.setData(key: token, value: state.userData.user?.uid).then((value) {
-           if(value==true){
-             context.navigateToReplacement(pageName: AppRoutes.loginSuccessRoute);
-           }
-         });
-
-       }else if( state is LongInErrorState){
-         showCustomSnackBar(context, state.mess);
-       }
+        if (state is LongInSuccessState) {
+          CacheHelper.setData(key: token, value: state.userData.user?.uid).then(
+            (value) {
+              if (value == true) {
+                context.navigateToReplacement(
+                    pageName: AppRoutes.loginSuccessRoute);
+              }
+            },
+          );
+        } else if (state is LongInErrorState) {
+          showCustomSnackBar(context, state.mess);
+        }
       },
-      child:const SafeArea(
+      child: const SafeArea(
         child: Center(
           child: SingleChildScrollView(
             physics: PageScrollPhysics(),
-
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: Column(
@@ -47,10 +46,7 @@ class LoginViewBody extends StatelessWidget {
                   LogoWithText(),
                   UpperTextFormWithText(),
                   MiddleTextWithCheckBox(),
-
-
                   ButtonWithDriver(),
-
                   LowerTextWithIcon()
                 ],
               ),

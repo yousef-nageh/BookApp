@@ -68,13 +68,16 @@ abstract class AppRoutes {
         var bookEntity = settings.arguments as BookEntity;
         return MaterialPageRoute(
 
-          builder: (BuildContext context) => BlocProvider(
+          builder: (BuildContext context) {
+
+            return BlocProvider(
             create: (context) => BookDetailsCubit(
-                GetRelatedBooksUseCase(getIt.get<BookDetailsRepoImpl>()))..getRelatedBooks(bookEntity.category),
+                GetRelatedBooksUseCase(getIt.get<BookDetailsRepoImpl>()))..getRelatedBooks(bookEntity.title),
             child: BookDetailsView(
               model: bookEntity,
             ),
-          ),
+          );
+          },
         );
       case AppRoutes.searchViewRoute:
         return MaterialPageRoute(

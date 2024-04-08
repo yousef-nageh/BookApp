@@ -4,7 +4,7 @@ class BookEntity {
   final String image;
   final String publisher;
   final String previewLink;
-  final String category;
+
   final List<String> bookAuthors;
 
   BookEntity(
@@ -14,5 +14,5 @@ class BookEntity {
       required this.image,
       required this.publisher,
       required this.bookAuthors,
-        required this.category, });
+       });
 }

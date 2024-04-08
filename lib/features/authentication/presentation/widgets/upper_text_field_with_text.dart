@@ -36,7 +36,7 @@ class SignUPUpperTextFormWithText extends StatelessWidget {
               ),
             ),
             const MyTextForm(
-                validator:Validator.userNameValidator,
+                validator:Validator.searchValidator,
                 hintText: AppString.userHint,
                 prefixIcon: Icons.person,
                 keyboardType: TextInputType.text),
