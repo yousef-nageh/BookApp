@@ -13,8 +13,8 @@
 
     <application
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher"
-        android:label="bookly_app_with_mvvm"
+        android:icon="@mipmap/launcher_icon"
+        android:label="Bookly"
         >
         <activity
             android:name=".MainActivity"

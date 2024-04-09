@@ -58,7 +58,7 @@ void setupAnimation(){
           textAlign: TextAlign.center,
           AppString.loginSuccess,
 
-          style: StyleManager.textStyle20,
+          style: StyleManager.textStyle30,
         )
       ],
     );

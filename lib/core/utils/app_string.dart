@@ -1,7 +1,7 @@
 abstract class AppString{
 
   static const login="Login";
-  static const loginSuccess="Login Success=";
+  static const loginSuccess="Login Success ";
   static const couldNotLaunch=" This book Don't Available url";
   static const alreadyHaveAnAccount="already have an account?";
   static const doNotHaveAnAccount="don't have an account";

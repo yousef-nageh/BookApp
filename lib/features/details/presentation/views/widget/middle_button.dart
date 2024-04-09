@@ -1,4 +1,5 @@
 import 'package:bookly_app_with_mvvm/config/extension.dart';
+import 'package:bookly_app_with_mvvm/features/details/presentation/manager/book_details_cubit/book_details_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -14,18 +15,7 @@ class MiddleButton extends StatelessWidget {
   const MiddleButton({super.key, required this.model});
 
   final BookEntity model;
-void buttonFunction(BuildContext context) async{
-  Uri uri = Uri.parse(model.previewLink);
 
-  !await launchUrl(uri).catchError((error){
-    showCustomSnackBar(context,AppString.couldNotLaunch);
- return false;
-  });
-
-
-
-
-}
   @override
   Widget build(BuildContext context) {
 
@@ -47,7 +37,7 @@ void buttonFunction(BuildContext context) async{
               child: MyButton(
             text: AppString.freePreview,
             onPressed: () async {
-              buttonFunction(context);
+             BookDetailsCubit.instance(context).showBook(context, model.previewLink);
             },
             buttonColor: const Color(0xffEF8262),
             style:

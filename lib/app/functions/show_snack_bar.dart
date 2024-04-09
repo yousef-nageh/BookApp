@@ -6,11 +6,6 @@ void showCustomSnackBar(BuildContext context,String text) {
     SnackBar(
       content: Text(text,style: StyleManager.textStyle15,),
       duration: const Duration(seconds: 3),
-      action: SnackBarAction(
-        label: 'Close',
-        onPressed: () {
-          ScaffoldMessenger.of(context).hideCurrentSnackBar();
-        },
-      ),
+
     ));
   }

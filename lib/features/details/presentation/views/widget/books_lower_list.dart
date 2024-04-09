@@ -29,7 +29,7 @@ class BooksLowerList extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               physics: const BouncingScrollPhysics(),
               itemBuilder: (BuildContext context, int index) => BooksLowerItem(
-                imageUrl: cubit.bookList[index].image,
+                model: cubit.bookList[index]
 
 
               ),
