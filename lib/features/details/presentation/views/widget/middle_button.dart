@@ -1,9 +1,7 @@
 import 'package:bookly_app_with_mvvm/config/extension.dart';
 import 'package:bookly_app_with_mvvm/features/details/presentation/manager/book_details_cubit/book_details_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
-import '../../../../../app/functions/show_snack_bar.dart';
 import '../../../../../app/widget/my_button.dart';
 import '../../../../../core/utils/app_string.dart';
 import '../../../../../core/utils/style_manager.dart';
