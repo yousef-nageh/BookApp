@@ -1,16 +1,15 @@
-# bookly_app_with_mvvm
+Many people want to learn programming by books , and spend a lot of time to find the suitable book
+Our system make offer of many books about programming to read free easily. But if you want to hard copy of the book you have to buy 
+The app use clean architecture
+Features
+User Authentication: Secure login and registration system to protect user data.
+Browse Books: Explore a wide range of books categorized by genre, author, and popularity.
+Book Details: View detailed information about each book, including a synopsis, author bio, and user reviews.
+Reading Progress: Track your reading progress and see how much of the book you've read.
+Recommendations: Receive personalized book recommendations based on your reading history and preferences.
+Search Functionality: Easily find books by title, author, or ISBN
 
-A new Flutter project.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+https://github.com/yousef-nageh/BookApp/assets/111569252/c68a73f8-4641-4568-91c3-4ac354b13801
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
